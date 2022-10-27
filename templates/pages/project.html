@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+
+<div style="direction: rtl;" class="wrapper">
+    <!-- Content Wrapper. Contains page content -->
+    <div   class="content-wrapper p-5">
+      <!-- Content Header (Page header) -->
+
+              <div class="row mb-2">
+                <div class="col-sm-6">
+                  <h1>المشروعات</h1>
+                </div>
+ 
+              </div>
+          </section>
+      
+          <!-- Main content -->
+          <section class="content">                  
+            <!-- Default box -->
+            <div class="card card-solid">
+              <div class="card-body pb-0">
+                <div class="row d-flex align-items-stretch">
+                  {% for Project in Projectsss %}
+                  <!-- بداية الكتاب -->
+                  <div   class="col-12 col-sm-6 col-md-4 Projecthide Project{{Project.category.id}} Project{{Project.status}}">
+                    <div  id="" class="card bg-light">
+                      <div  class="card-header text-muted border-bottom-0">
+                        {{Project.category}}
+                      </div>
+                      <div class="card-body pt-0">
+                        <div class="row">
+                          <div class="col-7">
+                            <h2 class="lead"><b>{{Project.name}}</b></h2>
+                            <ul class="  fa-ul text-muted">
+                              <li class="small"><span class="fa-li"></span>{{Project.status}}</li>
+                              {% if Project.price %}
+                              <li class="small"><span class="fa-li"></span>{{Project.price}}</li>
+                              {% elif Project.retal_price_day %}
+                              <li class="small"><span class="fa-li"></span>{{Project.retal_price_day}}</li>
+                              {% endif %}
+                            </ul>
+                          </div>
+                          <div class="col-5 text-center">
+                            {% if Project.photo_Project %}
+                              <img style="height: 120px; width: 120px;"  src="{{Project.photo_Project.url}}" alt="" class="img-circle img-fluid">
+                            {% else%}
+                              <img style="height: 120px; width: 120px;"  src="{% static 'dist/img/photo1.png' %}" alt="" class="img-circle img-fluid">
+                            {% endif %}
+                            </div>
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <div class="text-right">
+                          <a href="{% url 'delete' Project.id %}" class="btn btn-sm bg-danger">
+                            <i class="fas fa-trash"></i>
+                          </a>
+                          <a href="{% url 'update' Project.id %}" class="btn btn-sm btn-primary">
+                            <i class="fas fa-Project"></i> تعديل
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  {% endfor %}
+                   <!-- نهاية الكتاب -->
+
+
+
+
+
+{% endblock %}
