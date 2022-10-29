@@ -1,5 +1,5 @@
 from django import forms
-from . models import Project, Category
+from . models import Project, Category ,EmailSubscribe
 
 
 class CategoryForm(forms.ModelForm):
@@ -47,43 +47,21 @@ class ProjectForm(forms.ModelForm):
 
         }
 
-# class ParticipateForm(forms.ModelForm):
+
+
+
+# class RegisterForm(forms.ModelForm):
 #     class Meta:
-#         model = Paricipate
-#         fields = [
-#             'name',
-#             'email',
-#         ]
-        
-#         widgets = {
-#             'name':forms.TextInput(attrs={ 'class':'form-control'}),
-#             'email':forms.TextInput(attrs={ 'class':'form-control'}),
-#             }
-
-from django import forms
-from django.contrib.auth.forms import  UserCreationForm
-
-attrs = {'class': 'form-control'}
-
-class UserRegisterForm(UserCreationForm):
-
-    firstname = forms.CharField(
-        label=('First Name'),
-        widget=forms.TextInput(attrs=attrs)
-    )
-    lastname = forms.CharField(
-        label=('Last Name'),
-        widget=forms.TextInput(attrs=attrs)
-    )
-    username = forms.CharField(
-        label=('Username'),
-        widget=forms.TextInput(attrs=attrs)
-    )
-    email = forms.EmailField(
-        label=('Email'),
-        widget=forms.TextInput(attrs=attrs)
-    )
+#         model = EmailSubscribe
+#         fields = ['email', ]
 
 
-    class Meta(UserCreationForm.Meta):
-        fields = ('firstname', 'lastname', 'username', 'email')
+
+# class RegisterForm(forms.ModelForm):
+
+#     email = forms.EmailField(label='البريد الإلكتروني')
+  
+
+#     class Meta:
+#         model = EmailSubscribe
+#         fields = ( 'email', )

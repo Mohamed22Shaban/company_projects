@@ -4,9 +4,6 @@ from .forms import ProjectForm, CategoryForm
 from django.utils.translation import gettext as _
 
 
-from django.core.mail import send_mail
-from django.template.loader import render_to_string
-# Create your views here.
 
 def index(request):
 
@@ -20,11 +17,6 @@ def index(request):
         add_category = CategoryForm(request.POST)
         if add_category.is_valid():
             add_category.save()
-#add participate
-        # add_participate = ParticipateForm(request.POST)
-        # if add_participate.is_valid():
-        #     add_participate.save()
-        #     send_emails()
 
     context = {
         _('category'): Category.objects.all(),
@@ -111,23 +103,24 @@ def delete(request, id):
 
 
 
-
+# from . forms import RegisterForm
 
 def send(request):
-    return render(request,'pages/register.html' )
+    if "email" in request.POST:
+        email = request.POST.get("email")# جلب القيمة من الريكوست
+        if not EmailSubscribe.objects.filter(email=email).exists(): # نتأكد من أن الايميل غير مسجل عندنا لكي نتجنب التكرار
+            EmailSubscribe.objects.create(email=email) # انشاء كائن وحفظه في قاعدة البيانات
+            # return redirect('/')
+
+    # con = {
+        # 'formuser': RegisterForm()
+    # }
+    return render(request,'pages/register.html')
 
 
-# from django.urls import reverse_lazy
-# from django.views.generic import CreateView
-# from accounts.forms import UserRegisterForm
-# from django.contrib.auth import login
 
-# ## create registration
-# class RegisterView(CreateView):
-#     form_class = UserRegisterForm
-#     # success_url = reverse_lazy('login')
 
-    # def get_success_url(self):
-    #     login(self.request, self.object)  #=> to automatic register
-    #     return reverse_lazy('base')
-#     template_name = 'pages/register.html'
+from django.views.generic import View
+from django.utils import translation
+
+

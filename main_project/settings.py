@@ -15,7 +15,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-LOCALE_PATHS = ( os.path.join(BASE_DIR, 'locale'), )
+# LOCALE_PATHS = (BASE_DIR + '/main_project/locale/', )
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'tasks',
     'blog',
     'crispy_forms',
-    'languages',
+    
 ]
 
 MIDDLEWARE = [
@@ -64,7 +64,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                # 'tasks.context_processors.recive_email',
+                'tasks.context_processors.recive_email',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -145,7 +145,7 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/accounts/login'
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'mohamedtelb200@gmail.com'
 EMAIL_HOST_PASSWORD = 'rtosexdesfifxzyu'

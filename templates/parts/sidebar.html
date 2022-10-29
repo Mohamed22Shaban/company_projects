@@ -12,11 +12,11 @@
         <div class="image">
         </div>
         <div class="info">
-          <a href="{% url 'base' %}" class="d-block">Muhammed Shaban</a>
+          <a href="{% url 'base' %}" class="d-block">{% trans 'El Huda Company' %}</a>
         </div>
       </div>
         <div class="info">
-          <a href="{% url 'home' %}" class="d-block">المدونه</a>
+          <a href="{% url 'home' %}" class="d-block">{% trans 'blog' %}</a>
         </div>
       </div>
 
@@ -28,7 +28,7 @@
             <a href="{% url 'Project' %}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                New Project
+                {% trans 'New project' %}
               </p>
             </a>
           </li>
@@ -36,7 +36,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                نوع المشروع
+                {% trans 'project type ' %}
                 <i class="fas fa-angle-left right"></i>
                 
               </p>

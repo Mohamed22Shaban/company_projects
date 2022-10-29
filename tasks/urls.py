@@ -6,5 +6,5 @@ urlpatterns = [
     path('update/<int:id>',views.update, name='update'),
     path('delete/<int:id>',views.delete, name='delete'),
     path('register/<int:id>',views.delete, name='register'),
-    path('send',views.send, name='send'),
+    path('send/',views.send, name='send'),
 ]

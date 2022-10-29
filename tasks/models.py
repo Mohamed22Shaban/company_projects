@@ -1,5 +1,5 @@
 from django.db import models
-from django.conf.global_settings import AUTH_USER_MODEL
+# from django.conf.global_settings import AUTH_USER_MODEL
 
 # Create your models here.
 from django.db import models
@@ -44,26 +44,23 @@ class Project(models.Model):
     active = models.BooleanField(default=True)
     status = models.CharField(max_length=50, choices=status_project,null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, null=True, blank=True)
-    user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE ,null=True)
+    # user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE ,null=True)
     def __str__(self):
         return self.name
 
 
 
-LANGUAGE_CHOICES = (
-    ('en-us', 'English'),
-    ('nl', 'Dutch'),
-)
 
-language = models.CharField(default='en-us', choices=LANGUAGE_CHOICES, max_length=5)
+
+
 
 
 
 class EmailSubscribe(models.Model):
-   email = models.EmailField(max_length=254, unique=True,null=True)
+    email = models.EmailField(max_length=254, unique=True,null=True,blank=True)
    
-
-
+    def __str__(self):
+        return self.email
 
 from django.conf import settings
 from django.core.mail import send_mail
