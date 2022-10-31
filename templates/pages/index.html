@@ -19,14 +19,14 @@
               <div class="card">
                 <div class="card-header border-0">
                   <div class="d-flex justify-content-between">
-                    <h3 class="card-name">اجمالي عدد المشروعات</h3>                    
+                    <h1 class="card-title">  {% trans 'the count of projects ' %}</h1>                    
                   </div>
                 </div>
                 <div class="card-body">
                   <div class="d-flex">
                     <p class="d-flex flex-column">
                       <span class="text-bold text-lg">{{allProjects}}</span>
-                      <span>اجمالي عدد المشروعات</span>
+                      
                     </p>  
                   </div>
                   <!-- /.d-flex -->
@@ -46,12 +46,12 @@
             {% for Project in Projectsss %}
             {% if Project.cost != None %}
             {% if Project.status == 'completed projects' %}
-                <p class='totalcost'>{{Project.cost}}</p>
+                <p class='totalprice'>{{Project.cost}}</p>
             {% endif %}
             {% endif %}
             {% if Project.total_retal != None %}
             {% if Project.status == 'joint projects' %}
-                <p class='totalcost'>{{Project.total_retal}}</p>
+                <p class='totalprice'>{{Project.total_retal}}</p>
             {% endif %}
             {% endif %}
 
@@ -65,12 +65,12 @@
             {% for Project in Projectsss %}
             {% if Project.total_retal != None %}
             {% if Project.status == 'joint projects' %}
-                <p class='totaljoint projectss'>{{Project.total_retal}}</p>
+                <p class='totalretails projectss'>{{Project.total_retal}}</p>
             {% endif %}
             {% endif %}
             {% endfor %}
             
-            <p class='salaryjoint projects'></p>
+            <p class='salaryretails '></p>
 
 
 
@@ -82,7 +82,7 @@
             {% endif %}
             {% endif %}
             {% endfor %}
-            <p class='salarysold'></p>
+            <p class= 'salarysold'></p>
 
 
 
@@ -107,11 +107,11 @@
   
                   <div class="d-flex flex-row justify-content-end">
                     <span class="mr-2">
-                      <i class="fas fa-square text-primary"></i> الاربح من المشروعات المنتهيه
+                      <i class="fas fa-square text-primary"></i> {% trans 'profits from completed projects' %} 
                       <p id="soldtotals"></p>     
                     </span>
                     <span>
-                      <i class="fas fa-square text-gray"></i> الارباح من المشروعات المشتركه
+                      <i class="fas fa-square text-gray"></i> {% trans 'profits from joint projects' %} 
                       <p id="rentedtotals"></p>
                     </span>
                   </div>
@@ -119,35 +119,35 @@
               </div>
             </div>
         
-            <!-- /.col-md-6 -->
           </div>
+          <!-- /.col-md-6 -->
           <!-- /.row -->
   
           <!-- /form add Projects -->
-          <div class="row m-1 mb-3">   
-            <a href="#Projectform" class="btn btn-primary" data-toggle="collapse">+ اضافةمشروع</a>
+          <!--<div class="row m-1 mb-3">   
+            <a href="#Projectform" class="btn btn-primary" data-toggle="collapse">+ {% trans 'add project' %} </a>
           </div>
           
-          <div id="Projectform" class="card card-primary collapse">
+          <!--<div id="Projectform" class="card card-primary collapse">
             <div class="card-header">
-              <h3 class="card-name">اضافة مشروع</h3>
+              <h3 class="card-name">{% trans 'add project' %}</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start  -->
-            <form method="POST" enctype="multipart/form-data"  > 
+            <!--<form method="POST" enctype="multipart/form-data"  > 
             {% csrf_token %}
               <div class="card-body"> 
               </div>
               {{form}}
               <!-- /.card-body --> 
-              <div class="card-footer">
+              <!--<div class="card-footer">
                 <button type="submit" class="btn btn-primary">{% trans 'add' %}</button>
               </div>
             </form>
           </div>
   
                 <!-- /.card -->
-          </div>
+          </div> 
           <!-- end form add Projects -->
   
   
@@ -170,24 +170,24 @@
 
           <div class="row">
             {% for Project in Projectsss %}
-          <!-- الكتب -->
+          
               <div id="" class="col-md-4 Projecthide Project{{Project.category.id}} Project{{Project.status}}">
                   <!-- Widget: user widget style 1 -->
                 <div id="" class="card card-widget widget-user ">
                   <!-- Add the bg color to the header using any of the bg-* classes -->
                 <!-- قائمة منسدلة -->
-                <div style="position: absolute;" class="btn-group">   
+                <!--<div style="position: absolute;" class="btn-group">   
                   <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="sr-only">Toggle Dropdown</span>
                   </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'update' Project.id %}">تعديل</a>
-                    <a class="dropdown-item" href="{% url 'delete' Project.id %}">حذف</a>
-                <!-- Button trigger modal -->
+                  <!--to add category-->
+                  <!--<div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'update' Project.id %}">{% trans 'update' %}</a>
+                    <a class="dropdown-item" href="{% url 'delete' Project.id %}">{% trans 'delete ' %}</a>
                   </div>
-                </div>
-                {% if Project.photo_Project%}
-                  <div style="background:url({{Project.photo_Project.url}}); background-size:cover" class= "widget-user-header bg-info">
+                </div> -->
+                {% if Project.photo_project%}
+                  <div style="background:url({{Project.photo_project.url}}); background-size:cover" class= "widget-user-header bg-info">
                 {% else %}
                   <div class= "widget-user-header bg-info">
                 {%endif%}
@@ -203,8 +203,8 @@
                   <div class="row">
                     <div class="col-sm-4 border-right">
                       <div class="description-block">
-                        <h5 class="description-header">{{Project.priod}}</h5>
                         <span class="description-text">{% trans 'priod' %}</span>
+                        <h5 class="description-header">{{Project.priod}}</h5>
                       </div>
                       <!-- /.description-block -->
                     </div>
@@ -212,11 +212,11 @@
                     <div class="col-sm-4 border-right">
                       <div class="description-block">
                         {% if Project.cost %}
+                        <span class="description-text">{% trans 'cost ' %}</span>
                         <h5 class="description-header">{{Project.cost}}</h5>
-                        <span class="description-text">التكلفه</span>
                         {% elif Project.retal_cost_day %}
+                        <span class="description-text"> {% trans 'daily cost '%} </span>
                         <h5 class="description-header">{{Project.retal_cost_day}}</h5>
-                        <span class="description-text"> تكلفه المشروع لليوم</span>
                         {% endif %}
                       </div>
                       <!-- /.description-block -->
@@ -225,14 +225,14 @@
                     <div class="col-sm-4">
                       <div class="description-block">
                         {% if Project.status == 'in progress projects' %}
+                        <span class="description-text">{% trans 'status ' %}</span>
                         <h5 class="description-header text-success">{{Project.status}}</h5>
-                        <span class="description-text">الحالة</span>
                         {% elif Project.status == 'joint projects' %}
+                        <span class="description-text">{% trans 'status ' %}</span>
                         <h5 class="description-header text-warning">{{Project.status}}</h5>
-                        <span class="description-text">الحالة</span>
                         {% else %}
+                        <span class="description-text">{% trans 'status ' %}</span>
                         <h5 class="description-header text-danger">{{Project.status}}</h5>
-                        <span class="description-text">الحالة</span>
                         {% endif %}
                       </div>
                       <!-- /.description-block -->
@@ -244,11 +244,11 @@
                 </div>
                   <!-- /.widget-user -->
               </div>
-          <!-- نهاية الكتاب -->
+          <!-- نهاية  -->
             {% endfor %}
               <div class="row">
                 <div class="col text-center">
-                  <!--اضف صورة هنا في حالة عدم وجود كتب-->   
+                  <!--اضف صورة هنا في حالة عدم وجود -->   
                 </div>
               </div>
           </div>    

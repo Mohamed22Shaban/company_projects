@@ -1,3 +1,4 @@
+{% load i18n %}
 <ul class="list-group-flush latest-comment">
     {% for comment in l_comments %}
     <li class="list-group-item latest-comment-item">
@@ -10,6 +11,6 @@
         </a>
     </li>
     {% empty %}
-    <li class="list-group-item latest-comment-item">لا يوجد تعليقات</li>
+    <li class="list-group-item latest-comment-item"> {% trans 'No comments'%} </li>
     {% endfor %}
 </ul>

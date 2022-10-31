@@ -1,16 +1,16 @@
 {% load i18n %}
 <footer class="main-footer">
-    <strong>Copyright &copy; 2021-2022 <a href="https://www.facebook.com/abdelrahman.g.nofal">شركه الهدى الاستثماريه</a>.</strong>
-    All rights reserved.
+    <strong>{%trans 'Copyright'%} &copy; {%trans '2022'%}  <a href="https://www.google.com.eg/">{% trans "El Huda Company" %}</a>.</strong>
+    {% trans 'All rights reserved'%}.
     <div class="float-right d-none d-sm-inline-block">
-        <a target="_blank" class="text-danger" href="https://www.youtube.com/channel/UCbQh1yxBPVhyjB-G_blFFEQ"><i class="fab fa-lg fa-youtube"></i></a>
-        <a target="_blank" href="https://www.facebook.com/abdelrahman.g.nofal"><i class="fab fa-lg ml-1 fa-facebook"></i></a>
-        <a target="_blank" class="text-warning" href="https://www.instagram.com/abdelrahman_noufal/"><i class="fab fa-lg ml-1 fa-instagram"></i></a>
+        <a target="_blank" class="text-danger" href="https://www.google.com.eg/"><i class="fab fa-lg fa-youtube"></i></a>
+        <a target="_blank" href="https://www.google.com.eg/"><i class="fab fa-lg ml-1 fa-facebook"></i></a>
+        <a target="_blank" class="text-warning" href="https://www.google.com.eg/"><i class="fab fa-lg ml-1 fa-instagram"></i></a>
     </div>
     <div>
         <a class="btn btn-outline-light mx-2" href="{% url 'send' %}">
             <div class="d-grid gap-2">
-                <button class="btn btn-success btn-block">{% trans "Register" %}</button>
+                <button class="btn btn-success btn-block">{%trans 'register in the newsletter'%}</button>
             </div>
            </a>
     </div>

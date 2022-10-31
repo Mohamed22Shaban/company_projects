@@ -1,10 +1,12 @@
 {% extends 'blog/base.html' %}
+{% load i18n %}
+
 {% block content %}
 {% load crispy_forms_tags %}
 
 <div class="border p-4 mb-5">
-    <legend class="border-bottom pb-1 mb-3">لقد تم تسجيل خروجك بنجاح</legend>
-    <a href="{% url 'login' %}">تسجيل الدخول مرة أخرى</a>
+    <legend class="border-bottom pb-1 mb-3">{%trans 'logout successfuly'%}</legend>
+    <a href="{% url 'login' %}"> {%trans 'login again'%} </a>
 
 </div>
 {% endblock content %}

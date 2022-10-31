@@ -9,6 +9,7 @@
   
     <title>Nouvil</title>
     <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+    <!-- translation bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
 
     <!-- Font Awesome Icons -->
@@ -22,7 +23,23 @@
   </head>
   <body dir="rtl" class="hold-transition sidebar-mini">
 
-
+    <!-- drop-down for languages-->
+    <li>
+      <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+          {% get_current_language as LANGUAGE_CODE %}                                         
+          <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
+          {% if LANGUAGE_CODE == 'ar' %}
+              <button type='submit' name='language' value='en' class="icon solid fa-language">
+                  <span class="label"></span>English
+              </button>
+          {% else %}
+              <button type='submit' name='language' value='ar' class="icon solid fa-language">
+                  <span class="label"></span>عربي
+              </button>
+          {% endif %}
+      </form>
+  </li>
+  <title>  {% trans ' El Huda Company  ' %}</title> 
 
 {% include 'parts/navbar.html' %}
 {% include 'parts/sidebar.html' %}
@@ -55,7 +72,7 @@
           $('#myInput').trigger('focus')
         });
     /*here i will make loop for get id category and status for contact with Projects */
-    /*حساب اجمالي الارباح و هي عبارة عن حاصل جمع سعر الكتب عند البيع بالاضافة الى سعر استعارة الكتاب*/
+    /*حساب اجمالي الارباح*/
       });
     </script>
     <script>
@@ -94,7 +111,7 @@
     
     
 
-    <!-- / مجموع الكتب المستعاره والمباعه سويا  -->
+    <!-- / مجموع الكتب المشتركه والمباعه سويا  -->
     <script>
       $(document).ready(function(){
         var total = 0;
@@ -108,7 +125,7 @@
     </script>
 
 
-    <!-- /  الكتب المستعاره -->
+    <!-- /   المشتركه -->
     <script>
         var total2 = 0;
         $(".totalretails").each(function(){
@@ -121,7 +138,7 @@
     </script>
 
 
-    <!-- /  الكتب المباعه  -->
+    <!-- /   المباعه  -->
     <script>
         var total3 = 0;
         $(".totalsold").each(function(){
@@ -144,7 +161,6 @@
       
     $(function () {
       'use strict'
-     
       var ticksStyle = {
         fontColor: '#495057',
         fontStyle: 'bold'
@@ -164,7 +180,7 @@
           labels  : [
               
     
-            'تفاصيل الارباح',
+            ' profits datails',
     
           ],
     
@@ -246,7 +262,7 @@
             borderWidth: 10,
             
           }],
-          labels: ['قيد التنفيذ', 'المنتهيه', 'المشتركه'] 
+          labels: [' in progress', 'completed', 'joint'] 
         },
         options : {
           responsive: true, 

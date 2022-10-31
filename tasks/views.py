@@ -8,21 +8,21 @@ from django.utils.translation import gettext as _
 def index(request):
 
     # add Project
-    if request.method == 'POST':
-        add_Project = ProjectForm(request.POST,request.FILES)
-        if add_Project.is_valid():
-            add_Project.save()
+    # if request.method == 'POST':
+    #     add_Project = ProjectForm(request.POST,request.FILES)
+    #     if add_Project.is_valid():
+    #         add_Project.save()
     # add category
 
-        add_category = CategoryForm(request.POST)
-        if add_category.is_valid():
-            add_category.save()
+        # add_category = CategoryForm(request.POST)
+        # if add_category.is_valid():
+        #     add_category.save()
 
     context = {
         _('category'): Category.objects.all(),
         'Projectsss':Project.objects.all(),
-        'form':ProjectForm(),
-        'formcat':CategoryForm(),
+        # 'form':ProjectForm(),
+        # 'formcat':CategoryForm(),
         'allProjects':Project.objects.filter(active=True).count(),
         'Projectsold':Project.objects.filter(status='completed projects').count(),
         'Projectvaliable':Project.objects.filter(status='in progress projects').count(),
@@ -61,7 +61,7 @@ def Projects(request):
 
     return render(request, 'pages/project.html',context)
 
-
+#update
 def update(request ,id):
     
     # get id
@@ -80,12 +80,12 @@ def update(request ,id):
     }
 
 
-    return render(request, 'pages/update.html',context)
+    return render(request, 'pages/update.html')
 
 
 
 
-
+# delete
 def delete(request, id):
 
     Project_delete_id= Project.objects.get(id = id)
@@ -103,24 +103,24 @@ def delete(request, id):
 
 
 
-# from . forms import RegisterForm
+from . forms import RegisterForm
 
 def send(request):
     if "email" in request.POST:
         email = request.POST.get("email")# جلب القيمة من الريكوست
         if not EmailSubscribe.objects.filter(email=email).exists(): # نتأكد من أن الايميل غير مسجل عندنا لكي نتجنب التكرار
             EmailSubscribe.objects.create(email=email) # انشاء كائن وحفظه في قاعدة البيانات
-            # return redirect('/')
+            return redirect('/')
 
-    # con = {
-        # 'formuser': RegisterForm()
-    # }
-    return render(request,'pages/register.html')
+        # elif EmailSubscribe.objects.filter(email__iexact=email).exists():
+            # print('this is already register')
+
+    con = {
+        'formuser': RegisterForm()
+    }
+    return render(request,'pages/register.html',con)
 
 
 
-
-from django.views.generic import View
-from django.utils import translation
 
 

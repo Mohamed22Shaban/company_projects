@@ -10,7 +10,7 @@
       <!-- Content Header (Page header) -->
   <div  class="card card-danger">
       <div class="card-header">
-        <h3 class="card-title">حذف الكتاب</h3>
+        <h3 class="card-title">{% trans 'delete' %}</h3>
       </div>
       <!-- /.card-header -->
       <!-- form start -->
@@ -18,15 +18,15 @@
       {% csrf_token %}
       <div class="row">
           
-       <p class="p-3">هل تريد حقاً حذف الكتاب؟</p>
+       <p class="p-3">{% trans 'rellay delete' %}</p>
    
         </div>
         <!-- /.card-body -->
   
         <div class="card-footer">
-          <button type="submit" class="btn btn-primary">حذف</button>
+          <button type="submit" class="btn btn-primary">{% trans 'delete' %}</button>
   
-          <a href="{% url 'base' %}" type="buttton" class="btn btn-success">تراجع</a>
+          <a href="{% url 'base' %}" type="buttton" class="btn btn-success">{% trans 'back' %}</a>
         </div>
       </form>
     </div>

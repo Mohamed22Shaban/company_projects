@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-31 13:08+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: .\accounts\forms.py:8 .\accounts\forms.py:36
+#: .\accounts\templates\user\login.html:17
+#: .\accounts\templates\user\login.html:18
+msgid "username"
+msgstr "اسم المستخدم"
+
+#: .\accounts\forms.py:9 .\accounts\forms.py:48
+msgid "email"
+msgstr "البريد"
+
+#: .\accounts\forms.py:10 .\accounts\forms.py:46
+msgid "firstname"
+msgstr "الاسم الاول"
+
+#: .\accounts\forms.py:11 .\accounts\forms.py:47
+msgid "lastname"
+msgstr "الاسم الخير"
+
+#: .\accounts\forms.py:13 .\accounts\templates\user\login.html:21
+#: .\accounts\templates\user\login.html:22
+msgid "password"
+msgstr "كلمه السر"
+
+#: .\accounts\forms.py:15
+msgid "repassword"
+msgstr "اعاده كلمه السر"
+
+#: .\accounts\forms.py:38
+msgid "passward"
+msgstr "كلمه السر"
+
+#: .\accounts\templates\user\login.html:6
+msgid "sign in"
+msgstr "الدخول الى حسابك"
+
+#: .\accounts\templates\user\login.html:24
+#: .\accounts\templates\user\register.html:15
+msgid "login"
+msgstr "تسجيل الدخول"
+
+#: .\accounts\templates\user\login.html:27
+msgid "if you do not have accounts you can register"
+msgstr "لو لم يكن لديك حساب يمكنك التسجيل "
+
+#: .\accounts\templates\user\login.html:27
+msgid "register form here"
+msgstr "التسجيل من هنا"
+
+#: .\accounts\templates\user\logout.html:8
+msgid "logout successfuly"
+msgstr "تم تسجيل الخروج بنجاح"
+
+#: .\accounts\templates\user\logout.html:9
+msgid "login again"
+msgstr "الدخول مجددا"
+
+#: .\accounts\templates\user\profile.html:21
+msgid "edit"
+msgstr "تحرير"
+
+#: .\accounts\templates\user\profile.html:26
+msgid "name"
+msgstr "الاسم"
+
+#: .\accounts\templates\user\profile.html:28
+msgid "gmail"
+msgstr "الايميل"
+
+#: .\accounts\templates\user\profile.html:35
+msgid "count of blogs"
+msgstr "عدد التدوينات"
+
+#: .\accounts\templates\user\profile.html:40
+msgid "my blogs"
+msgstr "تدويناتى"
+
+#: .\accounts\templates\user\profile.html:46
+msgid "No blogs"
+msgstr "لا يوجد تدوينات"
+
+#: .\accounts\templates\user\profile_update.html:8
+msgid "profile update"
+msgstr "تعديل الملف الشخصى"
+
+#: .\accounts\templates\user\profile_update.html:14
+msgid "profiel photo"
+msgstr "صوره الملف الشخصى"
+
+#: .\accounts\templates\user\profile_update.html:15
+msgid "current photo"
+msgstr "الصوره الحاليه"
+
+#: .\accounts\templates\user\profile_update.html:17
+msgid "chose photo"
+msgstr "اختيار صوره"
+
+#: .\accounts\templates\user\register.html:8
+msgid "register"
+msgstr "التسجيل"
+
+#: .\accounts\templates\user\register.html:15
+msgid "if you have accounts"
+msgstr "لو لديك حساب"

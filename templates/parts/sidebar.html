@@ -2,7 +2,7 @@
 <aside style="position: fixed;" class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{% url 'base' %}" class="brand-link">
-      <span class="brand-text font-weight-light">NOUVIL</span>
+      <span class="brand-text font-weight-light">{% trans 'the list'%}</span>
     </a>
 
     <!-- Sidebar -->
@@ -24,14 +24,14 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a href="{% url 'Project' %}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 {% trans 'New project' %}
               </p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -42,11 +42,11 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              
-                  <li class="nav-item">
+              <!--to add category-->
+                 <!-- <li class="nav-item">
                     <a id="addcat" href="#" class="nav-link">
                         <i class="fa fa-plus "></i>
-                        <p  class="text-light"> Add New </p>
+                        <p  class="text-light"> {% trans 'Add New'%} </p>
                     </a>
                   </li> 
                   <form id="cat" method="POST">
@@ -54,8 +54,8 @@
                   <div id="catinput">
                     {{formcat}}
 
-                    <button type="submit" class="btn btn-success">حفظ</button>
-                    <button id="backcat" class="btn btn-primary ">تراجع</button>
+                    <button type="submit" class="btn btn-success">{% trans 'save'%}</button>
+                    <button id="backcat" class="btn btn-primary ">{% trans 'back'%}</button>
                   </div>
                 </form>  
                   {% for cat in Category %}
@@ -68,26 +68,26 @@
                   {% endfor %}
 
             </ul>
-          </li>
+          </li> -->
 
-          <li class="nav-header">المشروعات المشتركه</li>
+          <li class="nav-header">{% trans ' projects'%}</li>
           
           <li style="cursor: pointer;" class="nav-item statussold">
             <a id="statusSold" class="nav-link">
               <i class="nav-icon far fa-circle text-danger"></i>
-              <p class="text">المشروعات المنتهيه</p>
+              <p>{% trans 'in progress projects'%}</p>
             </a>
           </li>
           <li style="cursor: pointer;" class="nav-item statusretail">
             <a id="" class="nav-link">
               <i class="nav-icon far fa-circle text-warning"></i>
-              <p>المشروعات المشتركه</p>
+              <p class="text">{% trans 'completed projects'%}</p>
             </a>
           </li>
           <li style="cursor: pointer;" class="nav-item statusvailable">
             <a id="" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
-              <p>مشروعات قيد التنفيذ</p>
+              <p>{% trans 'joint projects'%}</p>
             </a>
           </li>
         </ul>

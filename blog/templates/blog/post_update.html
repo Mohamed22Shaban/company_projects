@@ -1,9 +1,11 @@
 {% extends 'blog/base.html' %}
+{% load i18n %}
+
 {% block content %}
 {% load crispy_forms_tags %}
 
 <div class="border p-4 mb-5">
-    <legend class="border-bottom pb-1 mb-3">تحرير التدوينة</legend>
+    <legend class="border-bottom pb-1 mb-3"> {%trans 'edit blog'%}</legend>
     <form method="POST">
         {% csrf_token %}
         {{form|crispy}}

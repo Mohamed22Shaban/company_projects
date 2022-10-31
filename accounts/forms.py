@@ -1,18 +1,18 @@
-from django import forms
+from django.utils.translation import gettext as _
 from django.contrib.auth.models import User
+from django import forms
 from .models import Profile
 
 
 class UserCreationForm(forms.ModelForm):
-    username = forms.CharField(label='اسم المستخدم', max_length=30,
-                               help_text='اسم المستخدم يجب ألا يحتوي على مسافات.')
-    email = forms.EmailField(label='البريد الإلكتروني')
-    first_name = forms.CharField(label='الاسم الأول')
-    last_name = forms.CharField(label='الاسم الأخير')
+    username = forms.CharField(label=_('username'), max_length=30,  )
+    email = forms.EmailField(label=_('email'))
+    first_name = forms.CharField(label=_('firstname'))
+    last_name = forms.CharField(label=_('lastname'))
     password1 = forms.CharField(
-        label='كلمة المرور', widget=forms.PasswordInput(), min_length=8)
+        label=_('password'), widget=forms.PasswordInput(), min_length=8)
     password2 = forms.CharField(
-        label='تأكيد كلمة المرور', widget=forms.PasswordInput(), min_length=8)
+        label=_('repassword'), widget=forms.PasswordInput(), min_length=8)
 
     class Meta:
         model = User
@@ -33,9 +33,9 @@ class UserCreationForm(forms.ModelForm):
 
 
 class LoginForm(forms.ModelForm):
-    username = forms.CharField(label='اسم المستخدم')
+    username = forms.CharField(label=_('username'))
     password = forms.CharField(
-        label='كلمة المرور', widget=forms.PasswordInput())
+        label=_('passward'), widget=forms.PasswordInput())
 
     class Meta:
         model = User
@@ -43,9 +43,9 @@ class LoginForm(forms.ModelForm):
 
 
 class UserUpdateForm(forms.ModelForm):
-    first_name = forms.CharField(label='الاسم الأول')
-    last_name = forms.CharField(label='الاسم الأخير')
-    email = forms.EmailField(label='البريد الإلكتروني')
+    first_name = forms.CharField(label=_('firstname'))
+    last_name = forms.CharField(label=_('lastname'))
+    email = forms.EmailField(label=_('email'))
 
     class Meta:
         model = User

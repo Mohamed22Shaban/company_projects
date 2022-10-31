@@ -11,7 +11,7 @@
 
               <div class="row mb-2">
                 <div class="col-sm-6">
-                  <h1>المشروعات</h1>
+                  <h1>{% trans 'projects' %}</h1>
                 </div>
  
               </div>
@@ -24,7 +24,7 @@
               <div class="card-body pb-0">
                 <div class="row d-flex align-items-stretch">
                   {% for Project in Projectsss %}
-                  <!-- بداية الكتاب -->
+                  <!-- بداية  -->
                   <div   class="col-12 col-sm-6 col-md-4 Projecthide Project{{Project.category.id}} Project{{Project.status}}">
                     <div  id="" class="card bg-light">
                       <div  class="card-header text-muted border-bottom-0">
@@ -58,7 +58,7 @@
                             <i class="fas fa-trash"></i>
                           </a>
                           <a href="{% url 'update' Project.id %}" class="btn btn-sm btn-primary">
-                            <i class="fas fa-Project"></i> تعديل
+                            <i class="fas fa-Project"></i> {% trans 'update' %}
                           </a>
                         </div>
                       </div>
@@ -66,7 +66,7 @@
                     
                   </div>
                   {% endfor %}
-                   <!-- نهاية الكتاب -->
+                   <!-- نهاية  -->
 
 
 
