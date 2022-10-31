@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import django_heroku
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,7 @@ LOCALE_PATHS = [
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-mxbr0_@-x-(*ofg9%(q77-306@b-p3jjl@wdk#*-m0!fn_@_g^'
+SECRET_KEY = '3Ef5D3C5C5Eb8Bf1D3181410Bb646806A26B51D1C2B604D7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddlewere'
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -140,6 +142,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'main_project/static')
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -161,3 +164,5 @@ EMAIL_HOST_USER = 'mohamedtelb200@gmail.com'
 EMAIL_HOST_PASSWORD = 'kijqgemazngrxrbv'
 EMAIL_USE_TLS = True
 EMAIL_PORT = '587'
+
+django_heroku.settings(locals())
