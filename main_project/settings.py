@@ -32,7 +32,7 @@ SECRET_KEY = '3Ef5D3C5C5Eb8Bf1D3181410Bb646806A26B51D1C2B604D7'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'project-django-show.herokuapp.com/','127.0.0.1'
+    'my55projects.herokuapp.com','127.0.0.1'
     ]
 
 
