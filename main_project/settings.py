@@ -32,7 +32,7 @@ SECRET_KEY = '3Ef5D3C5C5Eb8Bf1D3181410Bb646806A26B51D1C2B604D7'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://project-django-show.herokuapp.com/','127.0.0.1'
+    'my55projects.herokuapp.com','127.0.0.1'
     ]
 
 
@@ -92,12 +92,12 @@ WSGI_APPLICATION = 'main_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd6ajb9tlrf9vjn',
+        'HOST': 'ec2-44-209-57-4.compute-1.amazonaws.com',
+        'USER': 'artgrousuwactp',
+        'PASSWORD': '18bd81a390a0e9fa7440f22514047ae7e365c13a831b3d476fa42845876fa275',
+        'PORT': '5432',
     }
 }
 
