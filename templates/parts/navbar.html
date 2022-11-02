@@ -1,7 +1,30 @@
 {% load i18n %}
 
+<li align="Left">
+  <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+      {% get_current_language as LANGUAGE_CODE %}                                         
+      <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
+      {% if LANGUAGE_CODE == 'ar' %}
+          <button type='submit' name='language' value='en' class="btn dropdown-toggle dropdown-toggle-split" >
+            <span class="sr-only">Toggle Dropdown</span>en
+          </button>
+      {% else %}
+          <button type='submit' name='language' value='ar' class="btn dropdown-toggle dropdown-toggle-split" >
+            <span class="sr-only">Toggle Dropdown</span>ar
 
+
+
+
+
+
+
+              
+          </button>
+      {% endif %}
+  </form>
+</li>
 <header>
+  
   <h2 align="center" class="btn btn-success btn-block">  {% trans ' El Huda Company  ' %}</h2> 
   <nav  class="main-header navbar navbar-expand navbar-white navbar-light">
 
