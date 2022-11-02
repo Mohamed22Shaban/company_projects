@@ -32,7 +32,7 @@ SECRET_KEY = '3Ef5D3C5C5Eb8Bf1D3181410Bb646806A26B51D1C2B604D7'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'my55projects.herokuapp.com','127.0.0.1'
+    'project-django-show.herokuapp.com/','127.0.0.1'
     ]
 
 
@@ -140,16 +140,23 @@ LANGUAGES = [
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STSTATIC_URL = '/static/'
-if DEBUG:
-   STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, 'static'),
-   ]
-else:
-   STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/media/'
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'main_project/static')
+]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'blog/static')
+# ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 # Default primary key field type
