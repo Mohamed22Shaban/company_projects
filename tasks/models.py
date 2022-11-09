@@ -33,9 +33,9 @@ class Project(models.Model):
     cost = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     retal_cost_day = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     retal_priod = models.IntegerField(null=True, blank=True)
-    
     total_retal = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
 
+    datails = models.TextField(null=True)
     active = models.BooleanField(default=True)
     status = models.CharField(max_length=50, choices=status_project,null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, null=True, blank=True)
@@ -49,7 +49,7 @@ class Project(models.Model):
 
 
 
-
+## email settings
 
 class EmailSubscribe(models.Model):
     email = models.EmailField(max_length=254, unique=True,null=True,blank=True)
@@ -57,8 +57,11 @@ class EmailSubscribe(models.Model):
     def __str__(self):
         return self.email
 
+
+
 from django.conf import settings 
 from django.core.mail import send_mail
+
 
 class EmailSender(models.Model):
     title = models.CharField(max_length=50, null=True)

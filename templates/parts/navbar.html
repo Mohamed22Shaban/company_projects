@@ -1,5 +1,5 @@
 {% load i18n %}
-
+<!--language dropdown-->
 <li align="Left">
   <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
       {% get_current_language as LANGUAGE_CODE %}                                         
@@ -12,13 +12,6 @@
           <button type='submit' name='language' value='ar' class="btn dropdown-toggle dropdown-toggle-split" >
             <span class="sr-only">Toggle Dropdown</span>ar
 
-
-
-
-
-
-
-              
           </button>
       {% endif %}
   </form>
@@ -36,19 +29,23 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{% url 'base' %}" class="nav-link">{% trans 'basic page' %} </a>
       </li>
-              {% if user.is_authenticated %}
-                  <ul class="navbar-nav mb-2 mb-lg-0 me-3">
-                   <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-                         {{ user.username }}
-                     </a>
-                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                       <li><a class="dropdown-item" href="{% url 'profile' %}">{% trans 'Profile' %}</a></li>
-                       <li><hr class="dropdown-divider"></li>
-                       <li><a class="dropdown-item" href="{% url 'logout' %}">{% trans 'Logout' %}</a></li>
-                     </ul>
-                   </li>
-                 </ul>
+      {% if user.is_authenticated %}
+          <ul class="navbar-nav mb-2 mb-lg-0 me-3">
+            <li class="nav-item dropdown">
+              <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ user.username }}
+              </button>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'profile' %}">{% trans 'Profile' %}</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{% url 'logout' %}">{% trans 'Logout' %}</a></li>
+              </ul>
+            </li>
+          </ul>
+                
+                       
+                       
+  
      <!-- SEARCH FORM -->
               <form method="GET" action="{% url 'Project' %}" class="form-inline ml-3">
                 <div class="input-group input-group-sm">
@@ -61,12 +58,12 @@
                 </div>
               </form
               {% else %}
-                 <a class="btn btn-outline-light mx-2" href="{% url 'register' %}">
-                   {% trans 'Register' %}
-                  </a>
-                  <a class="btn btn-outline-light" href="{% url 'login' %}">
-                   {% trans 'Login' %}
-                  </a>
+                  <li class="fab fa-lg ml-1 fa-Register">
+                    <a href="{% url 'register' %}" class="nav-link">{% trans 'Register' %} </a>
+                  </li>
+                  <li class="fab fa-lg fa-Login">
+                    <a href="{% url 'login' %}" class="nav-link">{% trans 'Login' %} </a>
+                  </li>  
               {% endif %}
          </div>
       </div>

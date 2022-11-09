@@ -8,7 +8,7 @@
     <form method="POST">
         {% csrf_token %}
         {{form|crispy}}
-        <input class="btn btn-secondary mt-4" type="submit" value="نشر">
+        <input class="btn btn-secondary mt-4" type="submit" value="{% trans 'publish'%}">
     </form>
 </div>
 {% endblock content %}

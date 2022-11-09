@@ -6,6 +6,23 @@
 <html lang="ar" dir="rtl">
 
 <head>
+    <li align="Left">
+        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+            {% get_current_language as LANGUAGE_CODE %}                                         
+            <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
+            {% if LANGUAGE_CODE == 'ar' %}
+                <button type='submit' name='language' value='en' class="btn dropdown-toggle dropdown-toggle-split" >
+                  <span class="sr-only">Toggle Dropdown</span>en
+                </button>
+            {% else %}
+                <button type='submit' name='language' value='ar' class="btn dropdown-toggle dropdown-toggle-split" >
+                  <span class="sr-only">Toggle Dropdown</span>ar
+      
+                </button>
+            {% endif %}
+        </form>
+      </li>
+    <h2 align="center" class="btn btn-success btn-block">  {% trans ' El Huda Company  ' %}</h2> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% if title %}
@@ -24,21 +41,6 @@
     <header>
 
         <!-- form for convert language-->
-        <li>
-            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                {% get_current_language as LANGUAGE_CODE %}                                         
-                <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
-                {% if LANGUAGE_CODE == 'ar' %}
-                    <button type='submit' name='language' value='en' class="icon solid fa-language">
-                        <span class="label"></span>English
-                    </button>
-                {% else %}
-                    <button type='submit' name='language' value='ar' class="icon solid fa-language">
-                        <span class="label"></span>عربي
-                    </button>
-                {% endif %}
-            </form>
-        </li>
         <!--Start Navbar-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">

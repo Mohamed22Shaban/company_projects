@@ -160,8 +160,8 @@
                 {% for cat in category %}
                   <li class="nav-item cat{{cat.id}}">
                     <a id="" class="nav-link bg-primary" href="#">{{cat.name}}</a>
+                  </li>
                 {% endfor %}
-                </li>
 
               </ul>
             </div>
@@ -176,28 +176,31 @@
                 <div id="" class="card card-widget widget-user ">
                   <!-- Add the bg color to the header using any of the bg-* classes -->
                 <!-- قائمة منسدلة -->
-                <!--<div style="position: absolute;" class="btn-group">   
+                <div style="position: absolute;" class="btn-group">   
                   <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="sr-only">Toggle Dropdown</span>
                   </button>
                   <!--to add category-->
-                  <!--<div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'update' Project.id %}">{% trans 'update' %}</a>
-                    <a class="dropdown-item" href="{% url 'delete' Project.id %}">{% trans 'delete ' %}</a>
+                  <div class="dropdown-menu">
+                    <a class="dfdf"  <h3  class="widget-user-username">{{Project.datails}}</h3></a>
+                
                   </div>
-                </div> -->
+                </div> 
                 {% if Project.photo_project%}
                   <div style="background:url({{Project.photo_project.url}}); background-size:cover" class= "widget-user-header bg-info">
                 {% else %}
                   <div class= "widget-user-header bg-info">
                 {%endif%}
-                  <h3 class="widget-user-username">{{Project.name}}</h3>
+                  <h3  class="widget-user-username">{{Project.name}}</h3>
                   <h5 class="widget-user-desc">{{Project.engineer}}</h5>
                 </div>
                 <div class="widget-user-image">
                   {% if Project.photo_engineer%}
                   <img style="width:100px; height: 100px;" class="img-circle elevation-2" src="{{Project.photo_engineer.url}}" alt="User Avatar">
                   {% endif %}
+                  <div class="position-relative mb-4">
+                    <canvas id="visitors-chart" height="200"></canvas>
+                  </div> 
                 </div>
                 <div class="card-footer">
                   <div class="row">
@@ -225,14 +228,16 @@
                     <div class="col-sm-4">
                       <div class="description-block">
                         {% if Project.status == 'in progress projects' %}
-                        <span class="description-text">{% trans 'status ' %}</span>
                         <h5 class="description-header text-success">{{Project.status}}</h5>
+                        <span class="description-text">{% trans 'status ' %}</span>
+
                         {% elif Project.status == 'joint projects' %}
-                        <span class="description-text">{% trans 'status ' %}</span>
                         <h5 class="description-header text-warning">{{Project.status}}</h5>
-                        {% else %}
                         <span class="description-text">{% trans 'status ' %}</span>
+
+                        {% else %}
                         <h5 class="description-header text-danger">{{Project.status}}</h5>
+                        <span class="description-text">{% trans 'status ' %}</span>
                         {% endif %}
                       </div>
                       <!-- /.description-block -->

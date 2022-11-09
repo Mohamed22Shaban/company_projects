@@ -3,9 +3,11 @@ from . import views
 from django.contrib.auth.views import LoginView, LogoutView
 from django.conf.urls.static import static
 from django.conf import settings
+from accounts.views import RegisterView
 
 urlpatterns = [
-    path('register/', views.register, name='register'),
+    # path('register/', views.register, name='register'),
+    path('register/', RegisterView.as_view(), name='register'),
     # path('login/', LoginView.as_view(template_name='user/login.html'), name='login'),
     path('login/', views.login_user, name='login'),
     # path('logout/', LogoutView.as_view(template_name='user/logout.html'), name='logout'),

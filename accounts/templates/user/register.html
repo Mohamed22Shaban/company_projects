@@ -1,4 +1,4 @@
-{% extends 'blog/base.html' %}
+{% extends 'base.html' %}
 {% load i18n %}
 
 {% block content %}
@@ -9,7 +9,7 @@
     <form method="POST">
         {% csrf_token %}
         {{form|crispy}}
-        <input class="btn btn-secondary mt-4" type="submit" value="تسجيل">
+        <input class="btn btn-secondary mt-4" type="submit"  value="{%trans 'register'%} ">
     </form>
     <div class="border-top mt-4 pt-2">
         <small> {%trans 'if you have accounts'%} <a href="{% url 'login' %}">{%trans 'login'%} </a></small>

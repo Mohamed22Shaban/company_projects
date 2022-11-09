@@ -15,9 +15,14 @@ import django_heroku
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# BASE_DIR = Path(__file__).resolve().parent.parent
 
+## path use in static
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+######## BASE_DIR = Path(__file__).resolve().parent.parent
+  
+
+
+## language settings
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'main_project/locale')
 ]
@@ -52,6 +57,10 @@ INSTALLED_APPS = [
     
 ]
 
+
+## language setting   => 'django.middleware.locale.LocaleMiddleware',
+## heroku setting   => 'whitenoise.middleware.WhiteNoiseMiddleware',
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -65,6 +74,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'main_project.urls'
+
+## language settings  => 'django.template.context_processors.i18n',
+## email settings  => 'tasks.context_processors.recive_email',
 
 TEMPLATES = [
     {
@@ -89,6 +101,7 @@ WSGI_APPLICATION = 'main_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+#### waleed   ### mu2020
 
 DATABASES = {
     'default': {
@@ -103,18 +116,8 @@ DATABASES = {
 
 
 
-#### waleed   ### mu2020
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'd6ajb9tlrf9vjn',
-#         'HOST': 'ec2-44-209-57-4.compute-1.amazonaws.com',
-#         'USER': 'artgrousuwactp',
-#         'PASSWORD': '18bd81a390a0e9fa7440f22514047ae7e365c13a831b3d476fa42845876fa275',
-#         'PORT': '5432',
-#     }
-# }
+
 
 
 # Password validation
@@ -147,6 +150,8 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+## language settings
+
 LANGUAGES = [
   ('ar', ('Arabic')),
   ('en', ('English')),
@@ -162,10 +167,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'main_project/static')
 ]
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'blog/static')
-# ]
 
+
+
+## heroku settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
@@ -184,6 +189,7 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/accounts/login'
 
 
+## email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'mohamedtelb200@gmail.com'
@@ -191,4 +197,6 @@ EMAIL_HOST_PASSWORD = 'kijqgemazngrxrbv'
 EMAIL_USE_TLS = True
 EMAIL_PORT = '587'
 
+
+## heroku settings
 django_heroku.settings(locals())

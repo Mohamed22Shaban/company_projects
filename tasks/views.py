@@ -101,7 +101,7 @@ def delete(request, id):
 
 
 
-
+## email settings
 
 from . forms import RegisterForm
 
@@ -111,9 +111,6 @@ def send(request):
         if not EmailSubscribe.objects.filter(email=email).exists(): # نتأكد من أن الايميل غير مسجل عندنا لكي نتجنب التكرار
             EmailSubscribe.objects.create(email=email) # انشاء كائن وحفظه في قاعدة البيانات
             return redirect('/')
-
-        # elif EmailSubscribe.objects.filter(email__iexact=email).exists():
-            # print('this is already register')
 
     con = {
         'formuser': RegisterForm()

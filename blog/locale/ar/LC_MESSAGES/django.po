@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-31 13:08+0200\n"
+"POT-Creation-Date: 2022-11-09 15:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,108 +18,120 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-#: .\blog\forms.py:11 .\blog\forms.py:12
+
+#: .\blog\forms.py:11
 msgid "name"
 msgstr "الاسم"
+
+#: .\blog\forms.py:12
+msgid "email"
+msgstr "البريد الالكترونى"
 
 #: .\blog\forms.py:13
 msgid "body"
 msgstr "المحتوى"
 
-#: .\blog\forms.py:18
-msgid "title"
-msgstr "التاريخ"
+#: .\blog\forms.py:26
 
-#: .\blog\forms.py:19
-msgid "content"
+msgid "Title"
+msgstr "العنوان"
+
+#: .\blog\forms.py:27
+
+msgid "Content"
 msgstr "المحتوى"
 
-#: .\blog\templates\blog\base.html:12 .\blog\templates\blog\base.html:14
-#: .\blog\templates\blog\base.html:46
-msgid "blog"
-msgstr "المدونه"
-
-#: .\blog\templates\blog\base.html:55
-msgid "base"
-msgstr "الاساسيه"
-
-#: .\blog\templates\blog\base.html:60
-msgid "my courses"
-msgstr "دوراتى"
-
-#: .\blog\templates\blog\base.html:65
-msgid "python course"
-msgstr "دوره بايثون"
-
-#: .\blog\templates\blog\base.html:68
-msgid "django course"
-msgstr "دوره جانو"
-
-#: .\blog\templates\blog\base.html:72
-msgid "education management course"
-msgstr "دوره اداره التعليم "
-
-#: .\blog\templates\blog\base.html:77 .\blog\templates\blog\base.html:133
+#: .\blog\templates\blog\about.html:4 .\blog\templates\blog\base.html:79
+#: .\blog\templates\blog\base.html:135
 msgid "who am i"
 msgstr "من انا"
 
-#: .\blog\templates\blog\base.html:83 .\blog\templates\blog\new_post.html:7
+#: .\blog\templates\blog\base.html:25
+msgid " El Huda Company  "
+msgstr "شركه الهدى"
+
+#: .\blog\templates\blog\base.html:29 .\blog\templates\blog\base.html:31
+#: .\blog\templates\blog\base.html:48
+msgid "blog"
+msgstr "المدونه"
+
+#: .\blog\templates\blog\base.html:57
+msgid "base"
+msgstr "الاساسيه"
+
+#: .\blog\templates\blog\base.html:62
+msgid "my courses"
+msgstr "دوراتى"
+
+#: .\blog\templates\blog\base.html:67
+msgid "python course"
+msgstr "دوره بايثون"
+
+#: .\blog\templates\blog\base.html:70
+msgid "django course"
+msgstr "دوره جانو"
+
+#: .\blog\templates\blog\base.html:74
+msgid "education management course"
+msgstr "دوره اداره التعليم "
+
+#: .\blog\templates\blog\base.html:85 .\blog\templates\blog\new_post.html:7
 msgid "New blog"
 msgstr "تدوينه جديده"
 
-#: .\blog\templates\blog\base.html:84
+#: .\blog\templates\blog\base.html:86
 msgid "Profile"
 msgstr "الملف الشخصى"
 
-#: .\blog\templates\blog\base.html:85
+#: .\blog\templates\blog\base.html:87
 msgid "logout"
 msgstr "تسجيل الخروج"
 
-#: .\blog\templates\blog\base.html:89 .\blog\templates\blog\index.html:21
+#: .\blog\templates\blog\base.html:91 .\blog\templates\blog\index.html:21
 msgid "login"
 msgstr "تسجيل الدخول"
 
-#: .\blog\templates\blog\base.html:90
+#: .\blog\templates\blog\base.html:92
 msgid "register"
 msgstr "التسجيل"
 
-#: .\blog\templates\blog\base.html:95
+#: .\blog\templates\blog\base.html:97
 msgid "back to the basic page"
 msgstr "الرجوع الى الصفحه الرئيسيه"
 
-#: .\blog\templates\blog\base.html:114
+#: .\blog\templates\blog\base.html:116
 msgid "last blog"
 msgstr "اخر تدوينه"
 
-#: .\blog\templates\blog\base.html:119
+#: .\blog\templates\blog\base.html:121
 msgid "last comments"
 msgstr "اخر تعليق"
 
-#: .\blog\templates\blog\base.html:139
+#: .\blog\templates\blog\base.html:141
 msgid "muhammed shaban learn how to improve my skills "
 msgstr "محمد شعبان احول التطوير من مهاراتى"
 
-#: .\blog\templates\blog\base.html:145
+#: .\blog\templates\blog\base.html:147
 msgid "important sites"
 msgstr "مواقع مهمه"
 
-#: .\blog\templates\blog\base.html:149
+#: .\blog\templates\blog\base.html:151
 msgid "django Documents"
 msgstr "وثائق جانو"
 
-#: .\blog\templates\blog\base.html:150
+#: .\blog\templates\blog\base.html:152
 msgid "python Documents"
 msgstr "وثائق بايثون"
 
-#: .\blog\templates\blog\base.html:151
+#: .\blog\templates\blog\base.html:153
 msgid " ensure"
 msgstr "تاكيد"
 
-#: .\blog\templates\blog\base.html:156
+#: .\blog\templates\blog\base.html:158
 msgid "social media "
 msgstr "مواقع التواصل الاجتماعى"
 
-#: .\blog\templates\blog\base.html:171
+#: .\blog\templates\blog\base.html:173
 msgid "all rights reversed"
 msgstr "جميع حقوق الطبع محقوظه"
 
@@ -162,6 +174,10 @@ msgstr "لا يوجد تعليقات"
 #: .\blog\templates\blog\latest_posts.html:9
 msgid "No blogs"
 msgstr "لا يوجد تدوينات"
+
+#: .\blog\templates\blog\new_post.html:11
+msgid "publish"
+msgstr "النشر "
 
 #: .\blog\templates\blog\pagination.html:4
 #: .\blog\templates\blog\pagination.html:6

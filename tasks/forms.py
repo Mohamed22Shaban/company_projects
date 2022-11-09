@@ -70,6 +70,8 @@ class ProjectForm(forms.ModelForm):
 
 
 
+
+## email settings
 class RegisterForm(forms.ModelForm):
 
     class Meta:

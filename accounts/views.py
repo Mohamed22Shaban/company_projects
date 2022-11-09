@@ -3,28 +3,24 @@ from .forms import UserCreationForm, LoginForm, UserUpdateForm, ProfileUpdateFor
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from blog.models import Post
+
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 
-def register(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            new_user = form.save(commit=False)
-            #username = form.cleaned_data['username']
-            new_user.set_password(form.cleaned_data['password1'])
-            new_user.save()
-         
-            messages.success(
-                request, f'تهانينا {new_user} لقد تمت عملية التسجيل بنجاح.')
-            return redirect('login')
-    else:
-        form = UserCreationForm()
-    return render(request, 'user/register.html', {
-        'title': 'التسجيل',
-        'form': form,
-    })
+
+from django.views.generic import CreateView
+from django.urls import reverse_lazy
+
+
+class RegisterView(CreateView):
+    form_class = UserCreationForm
+    # success_url = reverse_lazy('login')
+    template_name = 'user/register.html'
+
+    def get_success_url(self):
+        login(self.request, self.object) 
+        return reverse_lazy('profile')
 
 
 def login_user(request):

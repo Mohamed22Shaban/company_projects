@@ -9,15 +9,20 @@ class NewComment(forms.ModelForm):
         fields = ('name', 'email', 'body')
         labels ={
             'name':_('name'),
-            'email':_('name'),
+            'email':_('email'),
             'body':_('body'),
         }
 
 
 class PostCreateForm(forms.ModelForm):
-    title = forms.CharField(label=_('title'))
-    content = forms.CharField(label=_('content'), widget=forms.Textarea)
+    title = forms.CharField()
+    content = forms.CharField( widget=forms.Textarea)
 
     class Meta:
         model = Post
         fields = ['title', 'content']
+
+        labels ={
+            'Title':_('Title'),
+            'Content':_('Content')
+        }
