@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-09 11:46+0200\n"
+"POT-Creation-Date: 2022-11-24 22:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -597,7 +597,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: .\Lib\site-packages\django\forms\formsets.py:483
-#: .\Lib\site-packages\django\forms\formsets.py:490
+#: .\Lib\site-packages\django\forms\formsets.py:490 .\report\models.py:7
 msgid "Order"
 msgstr ""
 
@@ -33204,10 +33204,82 @@ msgstr ""
 msgid "Zuojiang Zhuang"
 msgstr ""
 
-#: .\templates\base.html:28 .\templates\pages\register.html:42
-#: .\templates\parts\navbar.html:21
+#: .\report\admin.py:52
+#, fuzzy
+#| msgid "projects"
+msgid "Projects Report"
+msgstr "المشروعات"
+
+#: .\report\templates\admin\reports\report.html:7
+msgid "Sales Weekly"
+msgstr " المبيعات الاسبوعيه"
+
+#: .\report\templates\admin\reports\report.html:10
+msgid "Sales Monthly"
+msgstr "المبيعات الشهريه"
+
+#: .\report\templates\admin\reports\report.html:13
+msgid "Sales Yearly"
+msgstr "المبيعات السنويه"
+
+#: .\templates\base.html:38
 msgid " El Huda Company  "
 msgstr "شركه الهدى"
+
+#: .\templates\pages\contact.html:34
+msgid "Contact Us"
+msgstr "تواصل معنا"
+
+#: .\templates\pages\contact.html:37 .\templates\pages\register.html:37
+#: .\templates\passs.html:37
+#, fuzzy
+#| msgid "basic page"
+msgid "go back basic page"
+msgstr "الصفحه الاساسيه"
+
+#: .\templates\pages\contact.html:47
+msgid "Email & telephone"
+msgstr "البريد& التليفون"
+
+#: .\templates\pages\contact.html:58
+msgid "Address"
+msgstr "العنوان"
+
+#: .\templates\pages\contact.html:60
+msgid "1418 Riverwood Drive, Suite 3845 Cottonwood, CA 96022 United States"
+msgstr "1418 الحى الاول امريكا"
+
+#: .\templates\pages\contact.html:68
+msgid "Socials"
+msgstr "التواصل الاجتماعى"
+
+#: .\templates\pages\contact.html:84
+msgid "Get in touch with us"
+msgstr "تواصل معنا"
+
+#: .\templates\pages\contact.html:85
+msgid "Contact us any time we ready for assisting "
+msgstr "نحن جهازين فى اى وقت"
+
+#: .\templates\pages\contact.html:94
+msgid "Name"
+msgstr "الاسم"
+
+#: .\templates\pages\contact.html:101
+msgid "E-mail"
+msgstr "البريد الالكترونى"
+
+#: .\templates\pages\contact.html:108
+msgid "Phone"
+msgstr "موبيل"
+
+#: .\templates\pages\contact.html:114
+msgid "Message"
+msgstr "رساله"
+
+#: .\templates\pages\contact.html:119
+msgid "Send"
+msgstr "ارسال"
 
 #: .\templates\pages\delete.html:13 .\templates\pages\delete.html:27
 msgid "delete"
@@ -33221,46 +33293,106 @@ msgstr "متاكد من الحذف"
 msgid "back"
 msgstr "تراجع"
 
-#: .\templates\pages\index.html:22
-msgid "the count of projects "
-msgstr "عدد المشروعات"
+#: .\templates\pages\index.html:17
+msgid "Our Latest Projects"
+msgstr "مسروعتنا الاخيره"
 
-#: .\templates\pages\index.html:94
-msgid "profits"
-msgstr "الارباح"
+#: .\templates\pages\index.html:34
+msgid ""
+"We deliver reliable architectural solutions to our individual and corporate "
+"clients throughout the USA."
+msgstr "نقدم حلول ممتازه لعملائنا داخل اريكات"
+
+#: .\templates\pages\index.html:62
+msgid "International awards"
+msgstr " جوائز عالميه"
+
+#: .\templates\pages\index.html:70
+#, fuzzy
+#| msgid "joint projects"
+msgid "Finished projects"
+msgstr "المشروعات المشتركه"
+
+#: .\templates\pages\index.html:78
+msgid "Years of experience"
+msgstr "سنوات الخبره"
+
+#: .\templates\pages\index.html:84
+msgid "High-quality solutions"
+msgstr "حلول على اعلى درجه"
+
+#: .\templates\pages\index.html:85
+msgid ""
+"We are committed to providing the best possible solutions at a competitive "
+"cost. Our team is ready to offer a wide range of various architectural "
+"services"
+msgstr " ديما نقدم حلول ممكنه لعملائنا"
 
 #: .\templates\pages\index.html:110
-msgid "profits from completed projects"
-msgstr "لارباح من المشروعات المنتهيه"
+msgid "Modern Materials"
+msgstr "خامات حديثه"
 
-#: .\templates\pages\index.html:114
-msgid "profits from joint projects"
-msgstr "الارباح من المشروعات المشتركه"
+#: .\templates\pages\index.html:111
+msgid "All our projects are designed and built using the best materials."
+msgstr "كل مشروعتنا اسست على اجود الخامات"
 
-#: .\templates\pages\index.html:128 .\templates\pages\index.html:133
-msgid "add project"
-msgstr "اضافه مشروع"
+#: .\templates\pages\index.html:122
+msgid "Creative Ideas"
+msgstr "افكار هادفه"
 
-#: .\templates\pages\index.html:144
-msgid "add"
-msgstr "اضافه"
+#: .\templates\pages\index.html:123
+msgid "Creativity is a vital part of the projects we design for you"
+msgstr "البتكار هو الجز الاساسى"
 
-#: .\templates\pages\index.html:209
-msgid "priod"
-msgstr "المده"
+#: .\templates\pages\index.html:134
+msgid "Unique Approach"
+msgstr "نهج فريد"
 
-#: .\templates\pages\index.html:218
-msgid "cost "
-msgstr "التكلفه"
+#: .\templates\pages\index.html:135
+msgid "Our approach combines dedication and professionalism."
+msgstr "نهجنا التميز والتفانى"
 
-#: .\templates\pages\index.html:221
-msgid "daily cost "
-msgstr "التكلفه المشتركه"
+#: .\templates\pages\index.html:145
+msgid "Our Team"
+msgstr "الفريق"
 
-#: .\templates\pages\index.html:232 .\templates\pages\index.html:236
-#: .\templates\pages\index.html:240
-msgid "status "
-msgstr "الحاله"
+#: .\templates\pages\index.html:163
+msgid "Our Clients"
+msgstr "العملاء"
+
+#: .\templates\pages\index.html:186
+msgid "Meet the Team of Our Designers and Architects"
+msgstr "تواصل مع فريقنا"
+
+#: .\templates\pages\index.html:187
+msgid "The team of Arty has more than 20 years of experience in architecture."
+msgstr "الفريق لديه اكثر من 20 سنه من الخبره"
+
+#: .\templates\pages\index.html:197
+msgid "People in team"
+msgstr "اعضاء الفريق"
+
+#: .\templates\pages\index.html:201
+msgid "28 exceptional"
+msgstr "28 استثنائي"
+
+#: .\templates\pages\index.html:201
+msgid "full-time professionals"
+msgstr "المحترفين "
+
+#: .\templates\pages\index.html:202
+msgid "5-year specialized team member practice"
+msgstr "5 سنوات من التريب "
+
+#: .\templates\pages\index.html:210
+#, fuzzy
+#| msgid "blog"
+msgid "last blog"
+msgstr "المدونه"
+
+#: .\templates\pages\index.html:215
+msgid " see all blog"
+msgstr "روئيه كل التدوينات"
 
 #: .\templates\pages\project.html:14
 msgid "projects"
@@ -33270,86 +33402,198 @@ msgstr "المشروعات"
 msgid "update"
 msgstr "تعديل"
 
-#: .\templates\pages\register.html:46 .\templates\parts\footer.html:13
+#: .\templates\pages\register.html:34 .\templates\passs.html:34
+msgid "Register"
+msgstr "انشاء حساب"
+
+#: .\templates\pages\register.html:44
 msgid "register in the newsletter"
 msgstr "سجل فى النشره البريديه"
 
-#: .\templates\pages\register.html:48
+#: .\templates\pages\register.html:46
 msgid "you already register"
 msgstr "انت بالفعل مسجل"
 
-#: .\templates\pages\register.html:53
+#: .\templates\pages\register.html:51
 msgid "register"
 msgstr "التسجيل"
+
+#: .\templates\pages\show.html:27
+msgid "created_at"
+msgstr "انشا فى"
+
+#: .\templates\pages\show.html:31
+msgid "engineer"
+msgstr "المهندس المسؤل"
+
+#: .\templates\pages\show.html:35
+msgid "manager"
+msgstr "المدير التنفيزي"
+
+#: .\templates\pages\show.html:39
+msgid "proid"
+msgstr "المده"
+
+#: .\templates\pages\show.html:43
+msgid "place"
+msgstr "المكان"
+
+#: .\templates\pages\show.html:47
+#, fuzzy
+#| msgid "cost "
+msgid "cost"
+msgstr "التكلفه"
+
+#: .\templates\pages\show.html:51
+msgid "more datails"
+msgstr "لمعلومات  اكثر"
 
 #: .\templates\pages\update.html:28
 msgid "save"
 msgstr "حفظ"
 
-#: .\templates\parts\footer.html:3
-msgid "Copyright"
-msgstr "حقوق النشر"
+#: .\templates\parts\footer.html:7
+msgid "Location"
+msgstr "الموقع"
 
-#: .\templates\parts\footer.html:3
-msgid "2022"
-msgstr ""
+#: .\templates\parts\footer.html:10
+msgid "1418 Riverwood Drive"
+msgstr "الحى الاول"
 
-#: .\templates\parts\footer.html:3
-msgid "El Huda Company"
-msgstr "شركه الهدى"
+#: .\templates\parts\footer.html:13
+msgid "Suite 3845 Cottonwood,"
+msgstr "شارع 3845"
 
-#: .\templates\parts\footer.html:4
-msgid "All rights reserved"
+#: .\templates\parts\footer.html:19
+msgid "United States"
+msgstr "الولايات المتحده"
+
+#: .\templates\parts\footer.html:24
+msgid "Contacts"
+msgstr "تواصل معنا"
+
+#: .\templates\parts\footer.html:26
+msgid "Ph."
+msgstr "نظريه"
+
+#: .\templates\parts\footer.html:30
+msgid "Email"
+msgstr "البريد الالكترونى"
+
+#: .\templates\parts\footer.html:41
+msgid "Newsletter"
+msgstr "النشره الاخباريه"
+
+#: .\templates\parts\footer.html:45
+msgid "Subscribe"
+msgstr "اشترك"
+
+#: .\templates\parts\footer.html:56
+#, fuzzy
+#| msgid "All rights reserved"
+msgid ". All Rights Reserved. Design by"
 msgstr "جمميع حقوق الطبع محفوظه"
 
-#: .\templates\parts\navbar.html:30
+#: .\templates\parts\navbar.html:32
 msgid "basic page"
 msgstr "الصفحه الاساسيه"
 
-#: .\templates\parts\navbar.html:39
+#: .\templates\parts\navbar.html:35
+#, fuzzy
+#| msgid "blog"
+msgid " blog"
+msgstr "المدونه"
+
+#: .\templates\parts\navbar.html:38
+msgid "Contacts "
+msgstr "تواصل معنا"
+
+#: .\templates\parts\navbar.html:47
 msgid "Profile"
 msgstr "الملف الشخصى"
 
-#: .\templates\parts\navbar.html:41
+#: .\templates\parts\navbar.html:49
 msgid "Logout"
 msgstr "تسجيل الخروج"
 
-#: .\templates\parts\navbar.html:52
+#: .\templates\parts\navbar.html:56
 msgid "Search"
 msgstr "بحث"
 
-#: .\templates\parts\navbar.html:62
-msgid "Register"
+#: .\templates\parts\navbar.html:68
+#, fuzzy
+#| msgid "Register"
+msgid "Register "
 msgstr "انشاء حساب"
 
-#: .\templates\parts\navbar.html:65
-msgid "Login"
+#: .\templates\parts\navbar.html:71
+#, fuzzy
+#| msgid "Login"
+msgid "Login "
 msgstr "تسجيل الدخول"
 
-#: .\templates\parts\sidebar.html:9
-msgid "the list"
-msgstr "القائمه"
+#: .\templates\parts\navbar.html:100
+msgid "Welcome to Arty"
+msgstr "مرحبا فى ا ر تى"
 
-#: .\templates\parts\sidebar.html:19
-msgid "blog"
-msgstr "المدونه"
+#: .\templates\parts\navbar.html:101
+msgid "Top-Notch"
+msgstr "اعلى القيه"
 
-#: .\templates\parts\sidebar.html:32
-msgid "Category"
-msgstr "النوع"
+#: .\templates\parts\navbar.html:102
+msgid "Architecture"
+msgstr "الهندسه"
 
-#: .\templates\parts\sidebar.html:54
-msgid "project"
-msgstr "المشاريع"
+#: .\templates\parts\navbar.html:103
+msgid ""
+"With 19+ years’ experience in combining traditions and innovations, Arty "
+"creates settings to inspire the way people live, learn, heal, work and play"
+msgstr "مع 19 سنه من الخبره والجمع بين العادات والابتكارات"
 
-#: .\templates\parts\sidebar.html:63 .\templates\parts\sidebar.html:103
-msgid "completed projects"
-msgstr "المشروعات المنتهيه"
+#~ msgid "the count of projects "
+#~ msgstr "عدد المشروعات"
 
-#: .\templates\parts\sidebar.html:69 .\templates\parts\sidebar.html:95
-msgid "joint projects"
-msgstr "المشروعات المشتركه"
+#~ msgid "profits"
+#~ msgstr "الارباح"
 
-#: .\templates\parts\sidebar.html:75 .\templates\parts\sidebar.html:87
-msgid "in progress projects"
-msgstr "المشروعات فى مرحله التشغيل"
+#~ msgid "profits from completed projects"
+#~ msgstr "لارباح من المشروعات المنتهيه"
+
+#~ msgid "profits from joint projects"
+#~ msgstr "الارباح من المشروعات المشتركه"
+
+#~ msgid "add project"
+#~ msgstr "اضافه مشروع"
+
+#~ msgid "add"
+#~ msgstr "اضافه"
+
+#~ msgid "priod"
+#~ msgstr "المده"
+
+#~ msgid "daily cost "
+#~ msgstr "التكلفه المشتركه"
+
+#~ msgid "status "
+#~ msgstr "الحاله"
+
+#~ msgid "Copyright"
+#~ msgstr "حقوق النشر"
+
+#~ msgid "El Huda Company"
+#~ msgstr "شركه الهدى"
+
+#~ msgid "the list"
+#~ msgstr "القائمه"
+
+#~ msgid "Category"
+#~ msgstr "النوع"
+
+#~ msgid "project"
+#~ msgstr "المشاريع"
+
+#~ msgid "completed projects"
+#~ msgstr "المشروعات المنتهيه"
+
+#~ msgid "in progress projects"
+#~ msgstr "المشروعات فى مرحله التشغيل"

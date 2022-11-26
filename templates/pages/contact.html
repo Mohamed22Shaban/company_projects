@@ -1,0 +1,99 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+
+<html lang="ar" dir="rtl">
+<head>
+  <title>Contacts</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="{% static 'images/favicon.ico'%}" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900%7CRoboto:300,300i,400,400i,500,500i,700,700i,900,900i">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+  <link rel="stylesheet" href="{% static 'css/fonts.css'%}">
+  <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<li align="Left">
+    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+        {% get_current_language as LANGUAGE_CODE %}                                         
+        <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
+        {% if LANGUAGE_CODE == 'ar' %}
+            <button type='submit' name='language' value='en' class="btn dropdown-toggle dropdown-toggle-split" >
+                <span class="sr-only">Toggle Dropdown</span>en
+            </button>
+        {% else %}
+            <button type='submit' name='language' value='ar' class="btn dropdown-toggle dropdown-toggle-split" >
+                <span class="sr-only">Toggle Dropdown</span>ar
+
+            </button>
+        {% endif %}
+    </form>
+</li>
+<section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/breadcrumbs-bg-6.jpg);">
+    <div class="container">
+      <h3 class="breadcrumbs-custom-title">{% trans 'Contact Us' %}</h3>
+      <pre-footer-classic class="breadcrumbs-custom-subtitle">  
+          <li class="nav-item d-none d-sm-inline-block">
+          <a href="{% url 'base' %}" class="nav-link">{% trans 'go back basic page' %} </a>
+        </li></pre-footer-classic>
+    </div>
+  </section>
+<section class="section section-md bg-default">
+  <div class="container">
+    <div class="row row-40">
+      <div class="col-sm-6 col-md-4">
+        <div class="box-lined">
+          <div class="box-lined-body">
+            <h6 class="box-lined-title">{% trans 'Email & telephone'%}</h6>
+            <ul class="box-lined-list text-black">
+              <li><a class="big link-default" href="mailto:#">info@demolink.org</a></li>
+              <li><a class="big link-default" href="tel:#">1-300-123-1234</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="box-lined">
+          <div class="box-lined-body">
+            <h6 class="box-lined-title">{% trans 'Address'%}</h6>
+            <ul class="box-lined-list text-black">
+              <li class="big">{% trans '1418 Riverwood Drive, Suite 3845 Cottonwood, CA 96022 United States'%}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="box-lined">
+          <div class="box-lined-body">
+            <h6 class="box-lined-title">{% trans 'Socials'%}</h6>
+            <ul class="list-inline list-inline-sm">
+              <li><a class="icon icon-sm icon-bordered link-default mdi mdi-facebook" href="#"></a></li>
+              <li><a class="icon icon-sm icon-bordered link-default mdi mdi-instagram" href="#"></a></li>
+              <li><a class="icon icon-sm icon-bordered link-default mdi mdi-behance" href="#"></a></li>
+              <li><a class="icon icon-sm icon-bordered link-default mdi mdi-twitter" href="#"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Get in touch with us-->
+<section class="section section-md bg-default">
+  <div class="container">
+    <h4>{% trans 'Get in touch with us'%}</h4>
+    <p class="big">{% trans 'Contact us any time we ready for assisting '%}</p>
+    <!-- RD Mailform-->
+    <form  method="post" >
+      {% csrf_token %}
+      {{form|crispy}}
+        <div class="col-md-12">
+          <button class="button button-default" type="submit">{% trans 'Send'%}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+

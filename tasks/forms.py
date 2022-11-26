@@ -1,5 +1,6 @@
 from django import forms
-from . models import Project, Category ,EmailSubscribe
+from . models import Project, Category ,EmailSubscribe, RecievMessages
+
 from django.utils.translation import gettext as _
 
 class CategoryForm(forms.ModelForm):
@@ -30,10 +31,6 @@ class ProjectForm(forms.ModelForm):
             'photo_engineer',
             'proid',
             'cost',
-            'retal_cost_day',
-            'retal_priod',
-            'total_retal',
-            'status',
             'category',
         ]
 
@@ -45,10 +42,6 @@ class ProjectForm(forms.ModelForm):
             'photo_engineer':_('photo_engineer'),
             'proid':_('proid'),
             'cost':_('cost'),
-            'retal_cost_day':_('retal_cost_day'),
-            'retal_priod':_('retal_priod'),
-            'total_retal':_('total_retal'),
-            'status':_('status'),
             'category':_('category'),
         }
 
@@ -60,10 +53,7 @@ class ProjectForm(forms.ModelForm):
             'photo_engineer':forms.FileInput(attrs={ 'class':'form-control'}),
             'proid':forms.NumberInput(attrs={ 'class':'form-control'}),
             'cost':forms.NumberInput(attrs={ 'class':'form-control'}),
-            'retal_cost_day':forms.NumberInput(attrs={ 'class':'form-control', 'id':'retailprice'}),
-            'retal_priod':forms.NumberInput(attrs={ 'class':'form-control', 'id':'retailpriod'}),
-            'total_retal':forms.NumberInput(attrs={ 'class':'form-control', 'id':'totalretail'}),
-            'status':forms.Select(attrs={ 'class':'form-control'}),
+       
             'category':forms.Select(attrs={ 'class':'form-control'}),
 
         }
@@ -87,6 +77,33 @@ class RegisterForm(forms.ModelForm):
 
         widgets={
             'email':forms.EmailInput(attrs={ 'class':'form-control'}),
+
+
+        }
+class ContactForm(forms.ModelForm):
+
+    class Meta:
+        model = RecievMessages
+        fields =[
+            'name',
+            'email',
+            'phone',
+            'message',
+
+        ]
+
+        lebels={
+            'name':_('name'),
+            'email':_('email'),
+            'phone':_('phone'),
+            'message':_('message'),
+        }
+
+        widgets={
+            'name':forms.TextInput(attrs={ 'class':'form-control'}),
+            'email':forms.EmailInput(attrs={ 'class':'form-control'}),
+            'phone':forms.NumberInput(attrs={ 'class':'form-control'}),
+            'message':forms.TextInput(attrs={ 'class':'form-control'}),
         }
 
 

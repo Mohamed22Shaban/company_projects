@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-09 11:47+0200\n"
+"POT-Creation-Date: 2022-11-24 22:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,50 +18,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-#: .\tasks\forms.py:13 .\tasks\forms.py:42
+
+#: .\tasks\forms.py:14 .\tasks\forms.py:39
 msgid "name"
 msgstr "الاسم"
 
-#: .\tasks\forms.py:43
+#: .\tasks\forms.py:40
 msgid "engineer"
 msgstr "المهندس"
 
-#: .\tasks\forms.py:44
+#: .\tasks\forms.py:41
 msgid "photo_project"
 msgstr "صوره المشروع"
 
-#: .\tasks\forms.py:45
+#: .\tasks\forms.py:42
 msgid "photo_engineer"
 msgstr "صوره المهندس"
 
-#: .\tasks\forms.py:46
+#: .\tasks\forms.py:43
 msgid "proid"
 msgstr "المده"
 
-#: .\tasks\forms.py:47
+#: .\tasks\forms.py:44
 msgid "cost"
 msgstr "التكلفه"
 
-#: .\tasks\forms.py:48
-msgid "retal_cost_day"
-msgstr "تكلفه اليوم"
-
-#: .\tasks\forms.py:49
-msgid "retal_priod"
-msgstr "الجزء المشترك"
-
-#: .\tasks\forms.py:50
-msgid "total_retal"
-msgstr "اجمالى التكلفه المشتركه"
-
-#: .\tasks\forms.py:51
-msgid "status"
-msgstr "الحاله"
-
-#: .\tasks\forms.py:52 .\tasks\views.py:22
+#: .\tasks\forms.py:45
 msgid "category"
 msgstr "النوع"
 
-#: .\tasks\forms.py:85
+#: .\tasks\forms.py:75
 msgid "email"
 msgstr "البريد الالكترونى"
+
+#: .\tasks\models.py:73
+msgid "Order"
+msgstr "طلب"
+
+#: .\tasks\models.py:74
+msgid "Orders"
+msgstr " الطلبات"
+
+#~ msgid "retal_cost_day"
+#~ msgstr "تكلفه اليوم"
+
+#~ msgid "retal_priod"
+#~ msgstr "الجزء المشترك"
+
+#~ msgid "total_retal"
+#~ msgstr "اجمالى التكلفه المشتركه"
+
+#~ msgid "status"
+#~ msgstr "الحاله"

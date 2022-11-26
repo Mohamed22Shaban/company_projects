@@ -1,263 +1,230 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load post_tag %}
+{% load crispy_forms_tags %}
+{% load static %}
 {% block content %}
 <div style="direction: rtl;" class="wrapper">
+  <section class="section section-lg bg-default section-lined">
+    <div class="container container-lined">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+    <div class="container container-custom-width">
+      <h3 class="text-center">{% trans 'Our Latest Projects'%}</h3>
+      <div class="row row-custom-width row-30 row-xxl-100 row-flex">
+        {% for project in Projectsss %}
+        <div id="" class="col-md-4 bookhide project{{project.category.id}} ">
 
-
-
-
-    <!-- Content Wrapper. Contains page content -->
-    <div   class="content-wrapper">
-      <!-- Content Header (Page header) -->
-  
-  
-      <!--الاحصائيات-->
-      <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-header border-0">
-                  <div class="d-flex justify-content-between">
-                    <h1 class="card-title">  {% trans 'the count of projects ' %}</h1>                    
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="d-flex">
-                    <p class="d-flex flex-column">
-                      <span class="text-bold text-lg">{{allProjects}}</span>
-                      
-                    </p>  
-                  </div>
-                  <!-- /.d-flex -->
-
-                  <div class="position-relative mb-4">
-                    <canvas id="visitors-chart" height="200"></canvas>
-                  </div>  
-                </div>
-              </div>
-              <!-- /.card -->
-            </div>
-            <!-- /.col-md-6 -->
-            
-            
-            
-            <!-- / مجموع  المستعاره والمباعه سويا  -->
-            {% for Project in Projectsss %}
-            {% if Project.cost != None %}
-            {% if Project.status == 'completed projects' %}
-                <p class='totalprice'>{{Project.cost}}</p>
-            {% endif %}
-            {% endif %}
-            {% if Project.total_retal != None %}
-            {% if Project.status == 'joint projects' %}
-                <p class='totalprice'>{{Project.total_retal}}</p>
-            {% endif %}
-            {% endif %}
-
-            {% endfor %}
-
-
-
-
-
-            <!-- /   المستعاره -->
-            {% for Project in Projectsss %}
-            {% if Project.total_retal != None %}
-            {% if Project.status == 'joint projects' %}
-                <p class='totalretails projectss'>{{Project.total_retal}}</p>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-            
-            <p class='salaryretails '></p>
-
-
-
-            <!-- /   المباعه  -->
-            {% for Project in Projectsss %}
-            {% if Project.cost != None %}
-            {% if Project.status == 'completed projects' %}
-                <p class='totalsold'>{{Project.cost}}</p>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-            <p class= 'salarysold'></p>
-
-
-
-            
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-header border-0">
-                  <div class="d-flex justify-content-between">
-                    <h3 class="card-name">{% trans 'profits' %}</h3>   
-                  </div>
-                </div>    
-                <div class="card-body">
-                  <div class="d-flex">
-                    <p class="d-flex flex-column">
-                      <span id="totalsalarys" class="text-bold text-lg"></span><br></p>
-                  </div>
-                  <!-- /.d-flex -->
-  
-                  <div class="position-relative mb-4">
-                    <canvas id="sales-chart" height="160"></canvas>
-                  </div>
-  
-                  <div class="d-flex flex-row justify-content-end">
-                    <span class="mr-2">
-                      <i class="fas fa-square text-primary"></i> {% trans 'profits from completed projects' %} 
-                      <p id="soldtotals"></p>     
-                    </span>
-                    <span>
-                      <i class="fas fa-square text-gray"></i> {% trans 'profits from joint projects' %} 
-                      <p id="rentedtotals"></p>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-        
-          </div>
-          <!-- /.col-md-6 -->
-          <!-- /.row -->
-  
-          <!-- /form add Projects -->
-          <!--<div class="row m-1 mb-3">   
-            <a href="#Projectform" class="btn btn-primary" data-toggle="collapse">+ {% trans 'add project' %} </a>
-          </div>
-          
-          <!--<div id="Projectform" class="card card-primary collapse">
-            <div class="card-header">
-              <h3 class="card-name">{% trans 'add project' %}</h3>
-            </div>
-            <!-- /.card-header -->
-            <!-- form start  -->
-            <!--<form method="POST" enctype="multipart/form-data"  > 
-            {% csrf_token %}
-              <div class="card-body"> 
-              </div>
-              {{form}}
-              <!-- /.card-body --> 
-              <!--<div class="card-footer">
-                <button type="submit" class="btn btn-primary">{% trans 'add' %}</button>
-              </div>
-            </form>
-          </div>
-  
-                <!-- /.card -->
-          </div> 
-          <!-- end form add Projects -->
-  
-  
-          <!-- تصنيفات-->
-  
-          <div class="row justify-content-center mb-3">
-            <div class="col-4 ">
-              <ul class="nav">
-            
-                {% for cat in category %}
-                  <li class="nav-item cat{{cat.id}}">
-                    <a id="" class="nav-link bg-primary" href="#">{{cat.name}}</a>
-                  </li>
-                {% endfor %}
-
-              </ul>
-            </div>
-          </div>
-          <!-- Projects -->
-
-          <div class="row">
-            {% for Project in Projectsss %}
-          
-              <div id="" class="col-md-4 Projecthide Project{{Project.category.id}} Project{{Project.status}}">
-                  <!-- Widget: user widget style 1 -->
-                <div id="" class="card card-widget widget-user ">
-                  <!-- Add the bg color to the header using any of the bg-* classes -->
-                <!-- قائمة منسدلة -->
-                <div style="position: absolute;" class="btn-group">   
-                  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <!--to add category-->
-                  <div class="dropdown-menu">
-                    <a class="dfdf"  <h3  class="widget-user-username">{{Project.datails}}</h3></a>
-                
-                  </div>
-                </div> 
-                {% if Project.photo_project%}
-                  <div style="background:url({{Project.photo_project.url}}); background-size:cover" class= "widget-user-header bg-info">
+          <div class="col-sm-6 col-lg-4 wow fadeInRight">
+            {% if project.photo_project%}
+            <div class="project-grid" style="background-image: url({{project.photo_project.url}});">
+              {% else %}
+              <div class= "widget-user-header bg-info">
+              {% endif %}
+              {% if project.photo_engineer%}
+              <div class="inner"><img src="#" alt=""/>
                 {% else %}
-                  <div class= "widget-user-header bg-info">
-                {%endif%}
-                  <h3  class="widget-user-username">{{Project.name}}</h3>
-                  <h5 class="widget-user-desc">{{Project.engineer}}</h5>
-                </div>
-                <div class="widget-user-image">
-                  {% if Project.photo_engineer%}
-                  <img style="width:100px; height: 100px;" class="img-circle elevation-2" src="{{Project.photo_engineer.url}}" alt="User Avatar">
-                  {% endif %}
-                  <div class="position-relative mb-4">
-                    <canvas id="visitors-chart" height="200"></canvas>
-                  </div> 
-                </div>
-                <div class="card-footer">
-                  <div class="row">
-                    <div class="col-sm-4 border-right">
-                      <div class="description-block">
-                        <span class="description-text">{% trans 'priod' %}</span>
-                        <h5 class="description-header">{{Project.priod}}</h5>
-                      </div>
-                      <!-- /.description-block -->
-                    </div>
-                        <!-- /.col -->
-                    <div class="col-sm-4 border-right">
-                      <div class="description-block">
-                        {% if Project.cost %}
-                        <span class="description-text">{% trans 'cost ' %}</span>
-                        <h5 class="description-header">{{Project.cost}}</h5>
-                        {% elif Project.retal_cost_day %}
-                        <span class="description-text"> {% trans 'daily cost '%} </span>
-                        <h5 class="description-header">{{Project.retal_cost_day}}</h5>
-                        {% endif %}
-                      </div>
-                      <!-- /.description-block -->
-                    </div>
-                        <!-- /.col -->
-                    <div class="col-sm-4">
-                      <div class="description-block">
-                        {% if Project.status == 'in progress projects' %}
-                        <h5 class="description-header text-success">{{Project.status}}</h5>
-                        <span class="description-text">{% trans 'status ' %}</span>
-
-                        {% elif Project.status == 'joint projects' %}
-                        <h5 class="description-header text-warning">{{Project.status}}</h5>
-                        <span class="description-text">{% trans 'status ' %}</span>
-
-                        {% else %}
-                        <h5 class="description-header text-danger">{{Project.status}}</h5>
-                        <span class="description-text">{% trans 'status ' %}</span>
-                        {% endif %}
-                      </div>
-                      <!-- /.description-block -->
-                    </div>
-                        <!-- /.col -->
-                  </div>
-                      <!-- /.row -->
-                </div>
-                </div>
-                  <!-- /.widget-user -->
+                <div class= "widget-user-header bg-info">
+                {% endif %}
+                <h5 class="title text-capitalize font-weight-medium"><a href="#">{{project.name}}</a></h5>
+                <p class="font-weight-regular exeption">{% trans 'We deliver reliable architectural solutions to our individual and corporate clients throughout the USA.'%}</p><a class="button button-default" href="{% url 'show' project.id %}">View</a>
               </div>
-          <!-- نهاية  -->
-            {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        </div>
+      
+    </div>
+
+    <section class="section section-lg bg-gray-700 text-center text-sm-left">
+      <div class="container">
+        <div class="row row-40">
+          <div class="col-lg-9">
+            <div class="row row-30 row-xxl-85">
+              <div class="col-sm-6 col-md-4">
+        
+              </div>
+              <div class="col-sm-6 col-md-4">
+
+              </div>
+              <div class="col-sm-6 col-md-4">
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <article class="box-counter">
+                  <div class="box-counter-main">
+                    <div class="counter">10</div><span class="small small_top">+</span>
+                  </div>
+                  <div class="box-counter-title">{% trans 'International awards'%}</div>
+                </article>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <article class="box-counter">
+                  <div class="box-counter-main">
+                    <div class="counter">{{allprojects}}</div>
+                  </div>
+                  <div class="box-counter-title">{% trans 'Finished projects'%}</div>
+                </article>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <article class="box-counter">
+                  <div class="box-counter-main">
+                    <div class="counter">19</div>
+                  </div>
+                  <div class="box-counter-title">{% trans 'Years of experience'%}</div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="heading-3">{% trans 'High-quality solutions'%}</div>
+            <div class="big text-white-lighter text-white-darken">{% trans 'We are committed to providing the best possible solutions at a competitive cost. Our team is ready to offer a wide range of various architectural services'%}.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Blurb minimal-->
+    <section class="section section-lg bg-default section-lined">
+      <div class="container container-lined">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row row-40">
+          <div class="col-sm-6 col-md-4 offset-left-16 wow fadeInUp">
+            <!-- Blurb minimal-->
+            <div class="blurb-minimal unit unit-spacing-sm flex-column flex-lg-row">
+              <div class="unit-left">
+                <div class="blurb-minimal-icon construction-icon-12"></div>
+              </div>
+              <div class="unit-body">
+                <h5 class="blurb-minimal-title">{% trans 'Modern Materials'%}</h5>
+                <p class="blurb-minimal-exeption">{% trans 'All our projects are designed and built using the best materials.'%}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+            <!-- Blurb minimal-->
+            <div class="blurb-minimal unit unit-spacing-sm flex-column flex-lg-row">
+              <div class="unit-left">
+                <div class="blurb-minimal-icon construction-icon-13"></div>
+              </div>
+              <div class="unit-body">
+                <h5 class="blurb-minimal-title">{% trans 'Creative Ideas'%}</h5>
+                <p class="blurb-minimal-exeption">{% trans 'Creativity is a vital part of the projects we design for you'%}.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="0.4s">
+            <!-- Blurb minimal-->
+            <div class="blurb-minimal unit unit-spacing-sm flex-column flex-lg-row">
+              <div class="unit-left">
+                <div class="blurb-minimal-icon construction-icon-18"></div>
+              </div>
+              <div class="unit-body">
+                <h5 class="blurb-minimal-title">{% trans 'Unique Approach'%}</h5>
+                <p class="blurb-minimal-exeption">{% trans 'Our approach combines dedication and professionalism.'%}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Our Clients-->
+ 
+    <div class="container container-custom-width">
+      <h3 class="text-center bg-secondary text-light p-2">{%trans 'Our Team' %}</h3>
+      <div class="row row-custom-width row-30 row-xxl-100 row-flex">
+        {% for project in Projectsss %}
+        <div class="col-sm-4 col-lg-3 wow fadeInRight">
+          {% if project.photo_engineer%}
+          <div class="project-grid" style="background-image: url({{project.photo_engineer.url}}) ;">
+            <div class="inner"><img src="#" alt=""/>
+              {% else %}
+              <div class= "widget-user-header bg-info">
+              {% endif %}
+              <h5 class="title text-capitalize font-weight-small_top"><a href="#" >{{project.engineer}} </a></h5>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="container container-custom-width">
+      <h3 class="text-center bg-secondary text-light p-2">{%trans 'Our Clients' %}</h3>
+      <div class="row row-custom-width row-30 row-xxl-100 row-flex">
+        {% for client in clients %}
+        <div class="col-sm-4 col-lg-3 wow fadeInRight">
+          {% if client.photo_clients%}
+          <div class="project-grid" style="background-image: url({{client.photo_clients.url}}) ;">
+            <div class="inner"><img src="#" alt=""/>
+              {% else %}
+              <div class= "widget-user-header bg-info">
+              {% endif %}
+              <h5 class="title text-capitalize font-weight-small_top"><a href="#" >{{client.name}} </a></h5>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <!-- Team-->
+
+    
+          <div class="col-lg-5 col-xl-4">
+            <div class="row row-30 row-xxl-55 justify-content-end">
+              <div class="col-sm-6 col-lg-9 col-xl-10 text-lg-right">
+                <h3 class="offset-left-70">{% trans 'Meet the Team of Our Designers and Architects'%}</h3>
+                <div class="big-text">{% trans 'The team of Arty has more than 20 years of experience in architecture.'%}</div>
+                <div class="divider divider-2 d-none d-lg-block"></div>
+              </div>
+              <div class="col-sm-6 col-lg-8 col-xl-7">
+                <div class="counter-minimal">
+                  <div class="counter-left">
+                    <div class="counter">{{allclients}}</div>
+                  </div>
+                  <div class="counter-right">
+                    <div class="postfix">+</div>
+                    <div class="title">{% trans 'People in team'%}</div>
+                  </div>
+                </div>
+                <ul class="list-marked list-marked-big">
+                  <li>{% trans '28 exceptional'%}<br> {% trans 'full-time professionals'%}</li>
+                  <li>{% trans '5-year specialized team member practice'%}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <li class="nav-item">
+        <h3 class="text-center bg-secondary text-light p-2">{%trans 'last blog' %}</h3>
+        
+        {% latest_posts %}
+      </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="{% url 'home' %}" class="nav-link">{% trans ' see all blog' %} </a>
+        </li>
+      
+      
+
+        
+  
+
+
               <div class="row">
                 <div class="col text-center">
                   <!--اضف صورة هنا في حالة عدم وجود -->   
                 </div>
               </div>
-          </div>    
-      </div>
     </div>
         <!-- /.container-fluid -->
   </div>

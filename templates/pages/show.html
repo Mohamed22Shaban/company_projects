@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+
+{% block content %}
+<div class="container container-lined">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+  </div>
+  <section class="breadcrumbs-custom bg-image context-danger" style="background-image: url({{articles.photo_project.url}});">
+    
+    <div class="container">
+      <h3 class="breadcrumbs-custom-title">{{articles.name}}</h3>
+      <pre-footer-classic class="breadcrumbs-custom-subtitle"></pre-footer-classic>
+    </div>
+  </section>
+  <!-- Base typography -->
+  <section class="section section-lg bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-">
+          <ul class="list-xl">
+            <li>
+              <h1 class="left">{% trans 'created_at' %}</h1>
+              <p>{{articles.created_at}}</p>
+            </li>
+            <li>
+              <h1>{% trans 'engineer' %}</h1>
+              <p>{{articles.engineer}}</p>
+            </li>
+            <li>
+              <h1>{% trans 'manager' %}</h1>
+              <p>{{articles.manager}}</p>
+            </li>
+            <li>
+              <h1>{% trans 'proid' %}</h1>
+              <p>{{articles.proid}}</p>
+            </li>
+            <li>
+              <h1>{% trans 'place' %}</h1>
+              <p>{{articles.place}}</p>
+            </li>
+            <li>
+              <h1>{% trans 'cost' %}</h1>
+              <p>{{articles.cost}}</p>
+            </li>
+            <li>
+              <h1>{% trans 'more datails' %}</h1>
+              <p>{{articles.datails}}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div
+  </section>
+  
+  {% endblock %}

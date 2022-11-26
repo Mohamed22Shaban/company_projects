@@ -8,6 +8,16 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
   
     <title>Nouvil</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="{% static 'images/favicon.ico" type="image/x-icon' %}">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900%7CRoboto:300,300i,400,400i,500,500i,700,700i,900,900i">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
     <!-- language translation bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
@@ -26,10 +36,9 @@
     <!-- drop-down for languages-->
 
   <title>  {% trans ' El Huda Company  ' %}</title> 
+  
 
 {% include 'parts/navbar.html' %}
-{% include 'parts/sidebar.html' %}
-
 {% block content %}
 {% endblock %}
 
@@ -50,234 +59,22 @@
     <script src="{% static 'plugins/chart.js/Chart.min.js' %}"></script>
     
     <script src="{% static 'dist/js/demo.js' %}"></script>
-    <!--<script src="{% static 'dist/js/pages/dashboard3.js' %}"></script>
-    -->
-    <script>
-      $(document).ready(function(){
-        $('#myModal').on('shown.bs.modal', function () {
-          $('#myInput').trigger('focus')
-        });
-    /*here i will make loop for get id category and status for contact with Projects */
-    /*حساب اجمالي الارباح*/
-      });
-    </script>
-    <script>
-    $("#catinput").hide()
-    $("#addcat").click(function(){
-      $("#catinput").show()
+    <script src="{% static 'dist/js/pages/dashboard3.js' %}"></script>
+    <div class="snackbars" id="form-output-global"></div>
+  <script src="{% static 'js/core.min.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+
+  <script>
+
+    {% for project in Projectsss %}
+
+    $(".cat{{project.category.id}}").click(function(){
+      $(".bookhide").hide()
+      $(".project{{project.category.id}}").show()
     });
-    $("#backcat").click(function(){
-      $("#catinput").hide()
-    });
-    </script>
-
-    <script>
-
-      {% for Project in Projectsss %}
-
-      $(".cat{{Project.category.id}}").click(function(){
-        $(".Projecthide").hide()
-        $(".Project{{Project.category.id}}").show()
-      });
 
 
-
-      $(".status{{Project.status}}").click(function(){
-        $(".Projecthide").hide()
-        $(".Project{{Project.status}}").show()
-      });
-
-      {% endfor %}
-    </script>
-    <script>
-    $("#retailpriod").keyup(function(){
-      $("#totalretail").val($("#retailpriod").val()*$("#retailprice").val())
-    })
-    </script>
-    
-    
-
-    <!-- / مجموع الكتب المشتركه والمباعه سويا  -->
-    <script>
-      $(document).ready(function(){
-        var total = 0;
-        $(".totalprice").each(function(){
-          $(this).hide()
-          var salary = $(this).text()
-          total += parseInt(salary)
-        });
-        $("#totalsalarys").text($("#totalsalarys").text()+total)
-      });
-    </script>
-
-
-    <!-- /   المشتركه -->
-    <script>
-        var total2 = 0;
-        $(".totalretails").each(function(){
-          $(this).hide()
-          var salary2 = $(this).text()
-          total2 += parseInt(salary2)
-        });
-        $(".salaryretails").text(total2)
-        $(".salaryretails").hide()
-    </script>
-
-
-    <!-- /   المباعه  -->
-    <script>
-        var total3 = 0;
-        $(".totalsold").each(function(){
-          $(this).hide()
-          var salary3 = $(this).text()
-          total3 += parseInt(salary3)
-        });
-        $(".salarysold").text(total3)
-        $(".salarysold").hide()
-    </script>
-
-
-
-
-
-
-
-
-    <script>
-      
-    $(function () {
-      'use strict'
-      var ticksStyle = {
-        fontColor: '#495057',
-        fontStyle: 'bold'
-      }
-    
-      var mode      = 'index'
-      var intersect = true
-    
-      var $salesChart = $('#sales-chart')
-    
-      var salesChart  = new Chart($salesChart, {
-    
-        type   : 'bar',
-        
-        data   : {
-    
-          labels  : [
-              
-    
-            ' profits datails',
-    
-          ],
-    
-    
-          datasets: [
-            {
-              backgroundColor: '#007bff',
-              borderColor    : '#007bff',
-              data           : [ 
-              $(".salarysold").text(),
-              ]
-            },
-            {
-              backgroundColor: '#ced4da',
-              borderColor    : '#ced4da',
-              data           : [ 
-              $(".salaryretails").text(),
-              ]
-            }
-          ]
-        },
-    
-       
-       
-       options: {
-          maintainAspectRatio: false,
-          tooltips           : {
-            mode     : mode,
-            intersect: intersect
-          },
-          hover              : {
-            mode     : mode,
-            intersect: intersect
-          },
-          legend             : {
-            display: false
-          },
-          scales             : {
-            yAxes: [{
-              // display: false,
-              gridLines: {
-                display      : true,
-                lineWidth    : '4px',
-                color        : 'rgba(0, 0, 0, .2)',
-                zeroLineColor: 'transparent'
-              },
-              ticks    : $.extend({
-                beginAtZero: true,
-    
-                // Include a dollar sign in the ticks
-                callback: function (value, index, values) {
-                  if (value >= 1000) {
-                    value /= 1000
-                    value += 'k'
-                  }
-                  return '$' + value
-                }
-              }, ticksStyle)
-            }],
-            xAxes: [{
-              display  : true,
-              gridLines: {
-                display: false
-              },
-              ticks    : ticksStyle
-            }]
-          }
-        }
-      });
-      
-     var pieChart = document.getElementById('visitors-chart').getContext('2d')
-    
-      var myPieChart = new Chart(pieChart, {
-        type: 'pie',
-        data: {
-          datasets: [{
-            data: ['{{Projectvaliable}}','{{Projectsold}}','{{Projectretail}}'],
-            backgroundColor :["#27c100","#f3545d","#fdaf4b"],
-            borderWidth: 10,
-            
-          }],
-          labels: [' in progress', 'completed', 'joint'] 
-        },
-        options : {
-          responsive: true, 
-          maintainAspectRatio: false,
-          legend: {
-            position : 'bottom',
-            labels : {
-              fontColor: '#000',
-              fontSize: 15,
-              usePointStyle : true,
-              padding:30
-            }
-          },
-          pieceLabel: {
-            render: 'percentage',
-            fontColor: 'white',
-            fontSize: 14,
-          },
-    
-    
-        }
-      })
-    
-    })
-    
-    
-     
-    </script>
-    
-    </body>
-    </html>
-    
+    {% endfor %}
+  </script>
+  <!-- coded by Drel-->
+</body>

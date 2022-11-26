@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-09 11:47+0200\n"
+"POT-Creation-Date: 2022-11-24 22:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
 #: .\accounts\forms.py:8 .\accounts\forms.py:36
-#: .\accounts\templates\user\login.html:17
-#: .\accounts\templates\user\login.html:18
+#: .\accounts\templates\user\login.html:38
+#: .\accounts\templates\user\login.html:39
 msgid "username"
 msgstr "اسم المستخدم"
 
@@ -36,8 +37,8 @@ msgstr "الاسم الاول"
 msgid "lastname"
 msgstr "الاسم الخير"
 
-#: .\accounts\forms.py:13 .\accounts\templates\user\login.html:21
-#: .\accounts\templates\user\login.html:22
+#: .\accounts\forms.py:13 .\accounts\templates\user\login.html:42
+#: .\accounts\templates\user\login.html:43
 msgid "password"
 msgstr "كلمه السر"
 
@@ -49,20 +50,27 @@ msgstr "اعاده كلمه السر"
 msgid "passward"
 msgstr "كلمه السر"
 
-#: .\accounts\templates\user\login.html:6
-msgid "sign in"
-msgstr "الدخول الى حسابك"
-
-#: .\accounts\templates\user\login.html:24
-#: .\accounts\templates\user\register.html:15
+#: .\accounts\templates\user\login.html:18
+#: .\accounts\templates\user\login.html:45
+#: .\accounts\templates\user\register.html:51
 msgid "login"
 msgstr "تسجيل الدخول"
 
+#: .\accounts\templates\user\login.html:21
+#: .\accounts\templates\user\profile.html:37
+#: .\accounts\templates\user\register.html:37
+msgid "go back basic page"
+msgstr "العوده الى الصفحه الرئسيه"
+
 #: .\accounts\templates\user\login.html:27
+msgid "sign in"
+msgstr "الدخول الى حسابك"
+
+#: .\accounts\templates\user\login.html:48
 msgid "if you do not have accounts you can register"
 msgstr "لو لم يكن لديك حساب يمكنك التسجيل "
 
-#: .\accounts\templates\user\login.html:27
+#: .\accounts\templates\user\login.html:48
 msgid "register form here"
 msgstr "التسجيل من هنا"
 
@@ -74,27 +82,34 @@ msgstr "تم تسجيل الخروج بنجاح"
 msgid "login again"
 msgstr "الدخول مجددا"
 
-#: .\accounts\templates\user\profile.html:21
+#: .\accounts\templates\user\profile.html:34
+#: .\accounts\templates\user\register.html:34
+#, fuzzy
+#| msgid "register"
+msgid "Register"
+msgstr "التسجيل"
+
+#: .\accounts\templates\user\profile.html:50
 msgid "edit"
 msgstr "تحرير"
 
-#: .\accounts\templates\user\profile.html:26
+#: .\accounts\templates\user\profile.html:55
 msgid "name"
 msgstr "الاسم"
 
-#: .\accounts\templates\user\profile.html:28
+#: .\accounts\templates\user\profile.html:57
 msgid "gmail"
 msgstr "الايميل"
 
-#: .\accounts\templates\user\profile.html:35
+#: .\accounts\templates\user\profile.html:65
 msgid "count of blogs"
 msgstr "عدد التدوينات"
 
-#: .\accounts\templates\user\profile.html:40
+#: .\accounts\templates\user\profile.html:69
 msgid "my blogs"
 msgstr "تدويناتى"
 
-#: .\accounts\templates\user\profile.html:46
+#: .\accounts\templates\user\profile.html:75
 msgid "No blogs"
 msgstr "لا يوجد تدوينات"
 
@@ -114,11 +129,11 @@ msgstr "الصوره الحاليه"
 msgid "chose photo"
 msgstr "اختيار صوره"
 
-#: .\accounts\templates\user\register.html:8
-#: .\accounts\templates\user\register.html:12
+#: .\accounts\templates\user\register.html:44
+#: .\accounts\templates\user\register.html:48
 msgid "register"
 msgstr "التسجيل"
 
-#: .\accounts\templates\user\register.html:15
+#: .\accounts\templates\user\register.html:51
 msgid "if you have accounts"
 msgstr "لو لديك حساب"

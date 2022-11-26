@@ -7,4 +7,11 @@ def recive_email(request):
             EmailSubscribe.objects.create(email=email) # 
     else:
         return {}
+# def recive_message(request):
+#     if "email" in ContactForm(request.POST):
+#         email = request.POST.get("email") 
+#         if not RecievMessages.objects.filter(email=email).exists():
+#             RecievMessages.objects.create(email=email) # 
+#     else:
+#         return {}
 

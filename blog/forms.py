@@ -14,15 +14,15 @@ class NewComment(forms.ModelForm):
         }
 
 
-class PostCreateForm(forms.ModelForm):
-    title = forms.CharField()
-    content = forms.CharField( widget=forms.Textarea)
+# class PostCreateForm(forms.ModelForm):
+#     title = forms.CharField()
+#     content = forms.CharField( widget=forms.Textarea)
 
-    class Meta:
-        model = Post
-        fields = ['title', 'content']
+#     class Meta:
+#         model = Post
+#         fields = ['title', 'content']
 
-        labels ={
-            'Title':_('Title'),
-            'Content':_('Content')
-        }
+#         labels ={
+#             'Title':_('Title'),
+#             'Content':_('Content')
+#         }

@@ -1,7 +1,8 @@
 from django.shortcuts import render , redirect
 from . models import *
-from .forms import ProjectForm, CategoryForm
+# from .forms import ProjectForm, CategoryForm
 from django.utils.translation import gettext as _
+from django.conf import settings
 
 
 
@@ -19,14 +20,13 @@ def index(request):
         #     add_category.save()
 
     context = {
-        _('category'): Category.objects.all(),
+
+        'category': Category.objects.all(),
         'Projectsss':Project.objects.all(),
-        # 'form':ProjectForm(),
-        # 'formcat':CategoryForm(),
-        'allProjects':Project.objects.filter(active=True).count(),
-        'Projectsold':Project.objects.filter(status='completed projects').count(),
-        'Projectvaliable':Project.objects.filter(status='in progress projects').count(),
-        'Projectretail':Project.objects.filter(status='joint projects').count(),
+        'clients':Clients.objects.all(),
+        'allprojects':Project.objects.filter(active=True).count(),
+        'allclients':Clients.objects.filter(active=True).count(),
+   
     }
 
     return render(request, 'pages/index.html', context)
@@ -52,7 +52,7 @@ def Projects(request):
     context = {
         'category': Category.objects.all(),
         'Projectsss':search,
-        'formcat':CategoryForm(),
+        # 'formcat':CategoryForm(),
 
 
 
@@ -62,40 +62,104 @@ def Projects(request):
     return render(request, 'pages/project.html',context)
 
 #update
-def update(request ,id):
+# def update(request ,id):
+    
+#     # get id
+#     Project_id = Project.objects.get(id = id)
+#     if request.method == 'POST':
+#         # Project_save = ProjectForm(request.POST , request.FILES , instance=Project_id)
+#         if Project_save.is_valid():
+#             Project_save.save()
+#             return redirect('/')
+#     else:
+#         # Project_save = ProjectForm(instance=Project_id)
+
+
+#     context = {
+#         'form':Project_save,
+#     }
+
+
+#     return render(request, 'pages/update.html')
+
+
+def show(request, id):
     
     # get id
-    Project_id = Project.objects.get(id = id)
-    if request.method == 'POST':
-        Project_save = ProjectForm(request.POST , request.FILES , instance=Project_id)
-        if Project_save.is_valid():
-            Project_save.save()
-            return redirect('/')
-    else:
-        Project_save = ProjectForm(instance=Project_id)
+    # model = Project.objects.filter(id = id).first()
+    model = Project.objects.get(id = id)
+    
 
+
+    return render(request, 'pages/show.html',{
+        'articles': model
+    })
+
+
+# from . forms import *
+# def contact(request):
+#     model = RecievMessages.objects.all
+#     if request.method == 'POST':
+#         email = request.POST.get("email")# جلب القيمة من الريكوست
+#         if not RecievMessages.objects.filter(email=email).exists(): # نتأكد من أن الايميل غير مسجل عندنا لكي نتجنب التكرار
+#             RecievMessages.objects.create(email=email) # انشاء كائن وحفظه في قاعدة البيانات
+#             return redirect('/')
+#     return render(request, 'pages/contact.html',{
+#         'articles': model,
+#         'formuser': ContactForm()
+#     })
+
+from . forms import *
+def contact(request):
+    # model = Project.objects.all()
+    # if request.method == 'POST':
+    #     name = request.POST['name']
+    #     email = request.POST['email']
+    #     phone = request.POST['phone']
+    #     message = request.POST['message']
+
+        
+   
+    
+    #     send_mail(
+    #     name,
+    #     message,
+    #     phone,
+    #     ['settings.EMAIL_HOST_USER'],
+    #     # ['mohamedtelb200@gmail.com'],
+    #     email,
+        
+    # )
+    if request.method == 'POST':
+        add_book = ContactForm(request.POST,request.FILES)
+        if add_book.is_valid():
+            add_book.save()
 
     context = {
-        'form':Project_save,
+        
+        'form':ContactForm(),
+     
     }
 
 
-    return render(request, 'pages/update.html')
+    return render(request, 'pages/contact.html', context
+        
+    )
 
 
 
 
 # delete
-def delete(request, id):
+# def delete(request, id):
 
-    Project_delete_id= Project.objects.get(id = id)
-    if request.method == 'POST':
-        Project_delete_id.delete()
-        return redirect('/')
+#     Project_delete_id= Project.objects.get(id = id)
+#     if request.method == 'POST':
+#         Project_delete_id.delete()
+#         return redirect('/')
     
     
 
-    return render(request, 'pages/delete.html')
+    # return render(request, 'pages/delete.html')
 
 
 
@@ -103,7 +167,6 @@ def delete(request, id):
 
 ## email settings
 
-from . forms import RegisterForm
 
 def send(request):
     if "email" in request.POST:

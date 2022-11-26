@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-09 15:32+0200\n"
+"POT-Creation-Date: 2022-11-24 22:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,24 +31,18 @@ msgstr "البريد الالكترونى"
 msgid "body"
 msgstr "المحتوى"
 
-#: .\blog\forms.py:26
-
-msgid "Title"
-msgstr "العنوان"
-
-#: .\blog\forms.py:27
-
-msgid "Content"
-msgstr "المحتوى"
-
 #: .\blog\templates\blog\about.html:4 .\blog\templates\blog\base.html:79
-#: .\blog\templates\blog\base.html:135
+#: .\blog\templates\blog\base.html:134
 msgid "who am i"
 msgstr "من انا"
 
+#: .\blog\templates\blog\about.html:5
+msgid "Atry company for technology and architecture projects"
+msgstr "ا ت رى لمشروعات الانشاء والتقنيه"
+
 #: .\blog\templates\blog\base.html:25
-msgid " El Huda Company  "
-msgstr "شركه الهدى"
+msgid " Arty Blog "
+msgstr "مدونه الشركه"
 
 #: .\blog\templates\blog\base.html:29 .\blog\templates\blog\base.html:31
 #: .\blog\templates\blog\base.html:48
@@ -75,67 +69,63 @@ msgstr "دوره جانو"
 msgid "education management course"
 msgstr "دوره اداره التعليم "
 
-#: .\blog\templates\blog\base.html:85 .\blog\templates\blog\new_post.html:7
-msgid "New blog"
-msgstr "تدوينه جديده"
-
-#: .\blog\templates\blog\base.html:86
+#: .\blog\templates\blog\base.html:85
 msgid "Profile"
 msgstr "الملف الشخصى"
 
-#: .\blog\templates\blog\base.html:87
+#: .\blog\templates\blog\base.html:86
 msgid "logout"
 msgstr "تسجيل الخروج"
 
-#: .\blog\templates\blog\base.html:91 .\blog\templates\blog\index.html:21
+#: .\blog\templates\blog\base.html:90 .\blog\templates\blog\index.html:20
 msgid "login"
 msgstr "تسجيل الدخول"
 
-#: .\blog\templates\blog\base.html:92
+#: .\blog\templates\blog\base.html:91
 msgid "register"
 msgstr "التسجيل"
 
-#: .\blog\templates\blog\base.html:97
+#: .\blog\templates\blog\base.html:96
 msgid "back to the basic page"
 msgstr "الرجوع الى الصفحه الرئيسيه"
 
-#: .\blog\templates\blog\base.html:116
+#: .\blog\templates\blog\base.html:115
 msgid "last blog"
 msgstr "اخر تدوينه"
 
-#: .\blog\templates\blog\base.html:121
+#: .\blog\templates\blog\base.html:120
 msgid "last comments"
 msgstr "اخر تعليق"
 
-#: .\blog\templates\blog\base.html:141
+#: .\blog\templates\blog\base.html:140
 msgid "muhammed shaban learn how to improve my skills "
 msgstr "محمد شعبان احول التطوير من مهاراتى"
 
-#: .\blog\templates\blog\base.html:147
+#: .\blog\templates\blog\base.html:146
 msgid "important sites"
 msgstr "مواقع مهمه"
 
-#: .\blog\templates\blog\base.html:151
+#: .\blog\templates\blog\base.html:150
 msgid "django Documents"
 msgstr "وثائق جانو"
 
-#: .\blog\templates\blog\base.html:152
+#: .\blog\templates\blog\base.html:151
 msgid "python Documents"
 msgstr "وثائق بايثون"
 
-#: .\blog\templates\blog\base.html:153
+#: .\blog\templates\blog\base.html:152
 msgid " ensure"
 msgstr "تاكيد"
 
-#: .\blog\templates\blog\base.html:158
+#: .\blog\templates\blog\base.html:157
 msgid "social media "
 msgstr "مواقع التواصل الاجتماعى"
 
-#: .\blog\templates\blog\base.html:173
+#: .\blog\templates\blog\base.html:172
 msgid "all rights reversed"
 msgstr "جميع حقوق الطبع محقوظه"
 
-#: .\blog\templates\blog\detail.html:8 .\blog\templates\blog\index.html:15
+#: .\blog\templates\blog\detail.html:8 .\blog\templates\blog\index.html:14
 msgid "publish in"
 msgstr "النشر فى"
 
@@ -159,21 +149,31 @@ msgstr "لا يوجد تعليقات"
 msgid " Add comments"
 msgstr "اضافه تعليقات"
 
-#: .\blog\templates\blog\index.html:21
+#: .\blog\templates\blog\detail.html:38
+#, fuzzy
+#| msgid "last comments"
+msgid "  publish comments"
+msgstr "اخر تعليق"
+
+#: .\blog\templates\blog\index.html:20
 msgid " no blogs if you have accounts before you can log in"
 msgstr "لا يوجد تدوينات لو لديك حساب مسبقا تستطيع تسجيل الدخول"
 
-#: .\blog\templates\blog\index.html:22
+#: .\blog\templates\blog\index.html:21
 msgid "and publish in site"
 msgstr "و النشر على الموقع"
 
-#: .\blog\templates\blog\latest_comments.html:14
+#: .\blog\templates\blog\latest_comments.html:15
 msgid "No comments"
 msgstr "لا يوجد تعليقات"
 
 #: .\blog\templates\blog\latest_posts.html:9
 msgid "No blogs"
 msgstr "لا يوجد تدوينات"
+
+#: .\blog\templates\blog\new_post.html:7
+msgid "New blog"
+msgstr "تدوينه جديده"
 
 #: .\blog\templates\blog\new_post.html:11
 msgid "publish"
@@ -212,3 +212,12 @@ msgstr "تراجع"
 #: .\blog\templates\blog\post_update.html:8
 msgid "edit blog"
 msgstr "تحرير مدونه"
+
+#~ msgid "Title"
+#~ msgstr "العنوان"
+
+#~ msgid "Content"
+#~ msgstr "المحتوى"
+
+#~ msgid " El Huda Company  "
+#~ msgstr "شركه الهدى"
