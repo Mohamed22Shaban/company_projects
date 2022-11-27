@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-24 22:51+0200\n"
+"POT-Creation-Date: 2022-11-27 03:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr "الاسم"
 
 #: .\blog\forms.py:12
 msgid "email"
-msgstr "البريد الالكترونى"
+msgstr "البريد"
 
 #: .\blog\forms.py:13
 msgid "body"
@@ -41,7 +41,9 @@ msgid "Atry company for technology and architecture projects"
 msgstr "ا ت رى لمشروعات الانشاء والتقنيه"
 
 #: .\blog\templates\blog\base.html:25
-msgid " Arty Blog "
+#, fuzzy
+#| msgid " Arty Blog "
+msgid "Arty Blog"
 msgstr "مدونه الشركه"
 
 #: .\blog\templates\blog\base.html:29 .\blog\templates\blog\base.html:31
@@ -152,7 +154,7 @@ msgstr "اضافه تعليقات"
 #: .\blog\templates\blog\detail.html:38
 #, fuzzy
 #| msgid "last comments"
-msgid "  publish comments"
+msgid "publish comments"
 msgstr "اخر تعليق"
 
 #: .\blog\templates\blog\index.html:20
@@ -161,7 +163,7 @@ msgstr "لا يوجد تدوينات لو لديك حساب مسبقا تستط�
 
 #: .\blog\templates\blog\index.html:21
 msgid "and publish in site"
-msgstr "و النشر على الموقع"
+msgstr "والنشر على الموقع"
 
 #: .\blog\templates\blog\latest_comments.html:15
 msgid "No comments"
@@ -212,12 +214,3 @@ msgstr "تراجع"
 #: .\blog\templates\blog\post_update.html:8
 msgid "edit blog"
 msgstr "تحرير مدونه"
-
-#~ msgid "Title"
-#~ msgstr "العنوان"
-
-#~ msgid "Content"
-#~ msgstr "المحتوى"
-
-#~ msgid " El Huda Company  "
-#~ msgstr "شركه الهدى"

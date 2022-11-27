@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-24 22:51+0200\n"
+"POT-Creation-Date: 2022-11-27 03:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: .\tasks\forms.py:14 .\tasks\forms.py:39
+#: .\tasks\forms.py:14 .\tasks\forms.py:39 .\tasks\forms.py:96
 msgid "name"
 msgstr "الاسم"
 
@@ -47,9 +47,17 @@ msgstr "التكلفه"
 msgid "category"
 msgstr "النوع"
 
-#: .\tasks\forms.py:75
+#: .\tasks\forms.py:75 .\tasks\forms.py:97
 msgid "email"
 msgstr "البريد الالكترونى"
+
+#: .\tasks\forms.py:98
+msgid "phone"
+msgstr "التليفون"
+
+#: .\tasks\forms.py:99
+msgid "message"
+msgstr "الرساله"
 
 #: .\tasks\models.py:73
 msgid "Order"
@@ -59,14 +67,4 @@ msgstr "طلب"
 msgid "Orders"
 msgstr " الطلبات"
 
-#~ msgid "retal_cost_day"
-#~ msgstr "تكلفه اليوم"
 
-#~ msgid "retal_priod"
-#~ msgstr "الجزء المشترك"
-
-#~ msgid "total_retal"
-#~ msgstr "اجمالى التكلفه المشتركه"
-
-#~ msgid "status"
-#~ msgstr "الحاله"

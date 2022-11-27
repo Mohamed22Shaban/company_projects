@@ -35,7 +35,7 @@
     <form method="POST">
         {% csrf_token %}
         {{comment_form|crispy}}
-        <input class="btn btn-secondary" type="submit" value=" {% trans '  publish comments' %}">
+        <input class="btn btn-secondary" type="submit" value=" {% trans 'publish comments' %}">
     </form>
 </div>
 {% endblock content %}

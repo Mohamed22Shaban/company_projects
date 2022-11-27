@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-24 22:51+0200\n"
+"POT-Creation-Date: 2022-11-27 03:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +20,8 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: .\accounts\forms.py:8 .\accounts\forms.py:36
+#: .\accounts\templates\user\login.html:37
 #: .\accounts\templates\user\login.html:38
-#: .\accounts\templates\user\login.html:39
 msgid "username"
 msgstr "اسم المستخدم"
 
@@ -37,8 +37,8 @@ msgstr "الاسم الاول"
 msgid "lastname"
 msgstr "الاسم الخير"
 
-#: .\accounts\forms.py:13 .\accounts\templates\user\login.html:42
-#: .\accounts\templates\user\login.html:43
+#: .\accounts\forms.py:13 .\accounts\templates\user\login.html:41
+#: .\accounts\templates\user\login.html:42
 msgid "password"
 msgstr "كلمه السر"
 
@@ -50,27 +50,27 @@ msgstr "اعاده كلمه السر"
 msgid "passward"
 msgstr "كلمه السر"
 
-#: .\accounts\templates\user\login.html:18
-#: .\accounts\templates\user\login.html:45
+#: .\accounts\templates\user\login.html:17
+#: .\accounts\templates\user\login.html:44
 #: .\accounts\templates\user\register.html:51
 msgid "login"
 msgstr "تسجيل الدخول"
 
-#: .\accounts\templates\user\login.html:21
+#: .\accounts\templates\user\login.html:20
 #: .\accounts\templates\user\profile.html:37
 #: .\accounts\templates\user\register.html:37
 msgid "go back basic page"
 msgstr "العوده الى الصفحه الرئسيه"
 
-#: .\accounts\templates\user\login.html:27
+#: .\accounts\templates\user\login.html:26
 msgid "sign in"
 msgstr "الدخول الى حسابك"
 
-#: .\accounts\templates\user\login.html:48
+#: .\accounts\templates\user\login.html:47
 msgid "if you do not have accounts you can register"
 msgstr "لو لم يكن لديك حساب يمكنك التسجيل "
 
-#: .\accounts\templates\user\login.html:48
+#: .\accounts\templates\user\login.html:47
 msgid "register form here"
 msgstr "التسجيل من هنا"
 
