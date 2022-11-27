@@ -3,94 +3,95 @@
 
 <section class="section section-relative section-header">
         <!-- Page Header-->
-          <nav  class="main-header navbar navbar-expand navbar-white navbar-light">
-        
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-              
-                       
-              <li align="Left">
-                <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                    {% get_current_language as LANGUAGE_CODE %}                                         
-                    <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
-                    {% if LANGUAGE_CODE == 'ar' %}
-                        <button type='submit' name='language' value='en' class="btn dropdown-toggle dropdown-toggle-split" >
-                          <span class="sr-only">Toggle Dropdown</span>en
-                        </button>
-                    {% else %}
-                        <button type='submit' name='language' value='ar' class="btn dropdown-toggle dropdown-toggle-split" >
-                          <span class="sr-only">Toggle Dropdown</span>ar
-              
-                        </button>
-                    {% endif %}
-                </form>
-              </li>
-              <li class="nav-item d-none d-sm-inline-block">
-                <a href="{% url 'base' %}" class="nav-link">{% trans 'basic page' %} </a>
-              </li>
-              <li class="nav-item d-none d-sm-inline-block">
-                <a href="{% url 'home' %}" class="nav-link">{% trans 'blog' %} </a>
-              </li>
-              <li class="nav-item d-none d-sm-inline-block">
-                <a href="{% url 'contact' %}" class="nav-link">{% trans 'Contacts ' %} </a>
-              </li>
-              {% if user.is_authenticated %}
-              <ul class="navbar-nav mr-auto">
-                  <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">{{user.username}}</a></li>
-                  <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">{%trans 'logout' %}</a></li>
-              </ul>
-              {% else %}
-              <ul class="navbar-nav mr-auto">
-                  <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">{%trans 'login' %}</a></li>
-                  <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">{%trans 'register' %}</a></li>
-              </ul>
-              {% endif %}
+  <nav  class="main-header navbar navbar-expand navbar-white navbar-light">
 
-           <!-- SEARCH FORM -->
-                <form method="GET" action="{% url 'Project' %}" class="form-inline ml-3">
-                  <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" name="search_name" type="search" placeholder="{% trans 'Search'%}" aria-label="Search">
-                    <div class="input-group-append">
-                      <button class="btn btn-navbar" type="submit">
-                        <i class="fas fa-search"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-          </nav>
-        <!-- Preview section-->
-        <section class="section context-dark section-jumbotron bg-cover" style="background: #1717">
-          <div class="panel-left"><a class="brand" href="index.html"><img class="brand-logo-dark" src="#" alt="" width="232" height="67"/><img class="brand-logo-light" src="images/logo-inverse-86x104.png" alt="" width="86" height="104"/></a>
-          
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      
+                
+      <li align="Left">
+        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+            {% get_current_language as LANGUAGE_CODE %}                                         
+            <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
+            {% if LANGUAGE_CODE == 'ar' %}
+                <button type='submit' name='language' value='en' class="btn dropdown-toggle dropdown-toggle-split" >
+                  <span class="sr-only">Toggle Dropdown</span>en
+                </button>
+            {% else %}
+                <button type='submit' name='language' value='ar' class="btn dropdown-toggle dropdown-toggle-split" >
+                  <span class="sr-only">Toggle Dropdown</span>ar
+      
+                </button>
+            {% endif %}
+        </form>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'base' %}" class="nav-link">{% trans 'basic page' %} </a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'home' %}" class="nav-link">{% trans 'blog' %} </a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'contact' %}" class="nav-link">{% trans 'Contacts ' %} </a>
+      </li>
+      {% if user.is_authenticated %}
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">{{user.username}}</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">{%trans 'logout' %}</a></li>
+      </ul>
+      {% else %}
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">{%trans 'login' %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">{%trans 'register' %}</a></li>
+      </ul>
+      {% endif %}
+
+    <!-- SEARCH FORM -->
+        <form method="GET" action="{% url 'Project' %}" class="form-inline ml-3">
+          <div class="input-group input-group-sm">
+            <input class="form-control form-control-navbar" name="search_name" type="search" placeholder="{% trans 'Search'%}" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-navbar" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
           </div>
-          <div class="section-fullheight">
-            <div class="section-fullheight-inner section-md text-center text-lg-left">
-              <div class="container">
-                <div class="row justify-content-center justify-content-lg-start">
-                  <div class="col-md-10 offset-lg-1 col-lg-8 offset-xl-1 col-xl-9 offset-xxl-2 col-xxl-7">
-                    <div class="jumbotron-custom-1">
-                      <div class="text-1 font-weight-medium">{% trans 'Welcome to Arty'%}</div>
-                      <div class="title text-decorative">{% trans 'Top-Notch'%}</div>
-                      <div class="title">{% trans 'Architecture'%}</div>
-                      <p class="big-2 text-white-darken">{% trans 'With 19+ years’ experience in combining traditions and innovations, Arty creates settings to inspire the way people live, learn, heal, work and play'%}.</p>
-                      <ul class="project-list">
-                        {% for cat in category %}
-                        <li style="cursor: pointer;" class="nav-item cat{{cat.id}}">
-                          <a id="" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>{{cat.name}}</p>
-                          </a>
-                        </li>
-                        {% endfor %}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+        </form>
+  </nav>
+        <!-- Preview section-->
+  <section class="section context-dark section-jumbotron bg-cover" style="background: #1717">
+    <div class="panel-left"><a class="brand" href="index.html"><img class="brand-logo-dark" src="#" alt="" width="232" height="67"/><img class="brand-logo-light" src="images/logo-inverse-86x104.png" alt="" width="86" height="104"/></a>
+    
+    </div>
+    <div class="section-fullheight">
+      <div class="section-fullheight-inner section-md text-center text-lg-left">
+        <div class="container">
+          <div class="row justify-content-center justify-content-lg-start">
+            <div class="col-md-10 offset-lg-1 col-lg-8 offset-xl-1 col-xl-9 offset-xxl-2 col-xxl-7">
+              <div class="jumbotron-custom-1">
+                <div class="text-1 font-weight-medium">{% trans 'Welcome to Arty'%}</div>
+                <div class="title text-decorative">{% trans 'Top-Notch'%}</div>
+                <div class="title">{% trans 'Architecture'%}</div>
+                <p class="big-2 text-white-darken">{% trans 'With 19+ years’ experience in combining traditions and innovations, Arty creates settings to inspire the way people live, learn, heal, work and play'%}.</p>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
+<ul class="project-list">
+  {% for cat in category %}
+  <li style="cursor: pointer;" class="nav-item cat{{cat.id}}">
+    <a id="" class="nav-link">
+      <i class="far fa-circle nav-icon"></i>
+      <p>{{cat.name}}</p>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
 
+      
 
-
+      
