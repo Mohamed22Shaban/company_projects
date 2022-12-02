@@ -32,7 +32,7 @@ msgstr "الاسبوعيه"
 
 #: .\report\templates\admin\reports\report.html:10
 msgid "Sales Monthly"
-msgstr "هريهالش"
+msgstr "الشهريه"
 
 #: .\report\templates\admin\reports\report.html:13
 msgid "Sales Yearly"
