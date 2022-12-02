@@ -12,13 +12,39 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+    class Meta:
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categories')
 
+
+
+
+
+class ProjectStatus(models.IntegerChoices):
+    Pending = 0, _('Pending')
+    Completed = 1, _('Completed')
+    constructing = 2, _('constructing')
+
+
+class PaymentMethod(models.IntegerChoices):
+    cash = 1, _('cash')
+    credit = 2, _('credit')
 
 class Sales(models.Model):
     amount = models.FloatField( null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True,null=True)
-    active = models.BooleanField(default=True)
-    
+    active = models.BooleanField(null=True,default=True)
+    updated_at = models.DateTimeField(null=True,auto_now=True)
+    status = models.IntegerField(
+        choices=ProjectStatus.choices, default=ProjectStatus.Pending,null=True
+    )
+    payment_method = models.IntegerField(
+        choices=PaymentMethod.choices,null=True
+    )
+
+    class Meta:
+        verbose_name = _('Sales')
+        verbose_name_plural = _('Sales')
 
 
 
@@ -30,10 +56,13 @@ class Clients(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = _('Clients')
+        verbose_name_plural = _('Clients')
 
-class Project(models.Model):
- 
 
+
+class Project(models.Model): 
     name = models.CharField(max_length= 250)
     engineer = models.CharField(max_length= 250, null=True, blank=True)
     amount = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
@@ -53,6 +82,10 @@ class Project(models.Model):
     # sales = models.OneToOneField(Sales, on_delete=models.PROTECT, null=True, blank=True)
     def __str__(self):
         return self.name
+    class Meta:
+        verbose_name = _('Project')
+        verbose_name_plural = _('Projects')
+
 
 
 
@@ -64,8 +97,7 @@ class Project(models.Model):
 class Order(models.Model):
     sales = models.OneToOneField(Sales, on_delete=models.PROTECT, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    amount = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-
+    updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
         return str(self.id)
 
@@ -86,6 +118,10 @@ class EmailSubscribe(models.Model):
    
     def __str__(self):
         return self.email
+# trans class
+    class Meta:
+        verbose_name = _('EmailSubscribe')
+        verbose_name_plural = _('EmailSubscribes')
 
 
 
@@ -106,6 +142,13 @@ class EmailSender(models.Model):
         send_mail( subject, message, email_from, recipient_list )
         super().save(*args, **kwargs)
 
+    class Meta:
+        verbose_name = _('EmailSender')
+        verbose_name_plural = _('EmailSenders')
+
+
+
+
 
 class RecievMessages(models.Model):
     name = models.TextField(null=True)
@@ -115,3 +158,9 @@ class RecievMessages(models.Model):
    
     def __str__(self):
         return self.email
+
+    class Meta:
+        verbose_name = _('RecievMessages')
+        verbose_name_plural = _('RecievMessages')
+
+

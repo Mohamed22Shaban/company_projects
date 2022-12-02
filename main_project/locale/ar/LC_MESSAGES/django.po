@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-27 03:39+0200\n"
+"POT-Creation-Date: 2022-12-02 22:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -597,7 +597,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: .\Lib\site-packages\django\forms\formsets.py:483
-#: .\Lib\site-packages\django\forms\formsets.py:490 .\report\models.py:7
+#: .\Lib\site-packages\django\forms\formsets.py:490
 msgid "Order"
 msgstr ""
 
@@ -33204,24 +33204,6 @@ msgstr ""
 msgid "Zuojiang Zhuang"
 msgstr ""
 
-#: .\report\admin.py:52
-#, fuzzy
-#| msgid "projects"
-msgid "Projects Report"
-msgstr "المشروعات"
-
-#: .\report\templates\admin\reports\report.html:7
-msgid "Sales Weekly"
-msgstr " المبيعات الاسبوعيه"
-
-#: .\report\templates\admin\reports\report.html:10
-msgid "Sales Monthly"
-msgstr "المبيعات الشهريه"
-
-#: .\report\templates\admin\reports\report.html:13
-msgid "Sales Yearly"
-msgstr "المبيعات السنويه"
-
 #: .\templates\base.html:38
 msgid " El Huda Company  "
 msgstr "شركه الهدى"
@@ -33231,6 +33213,7 @@ msgid "Contact Us"
 msgstr "تواصل معنا"
 
 #: .\templates\pages\contact.html:39 .\templates\pages\register.html:37
+#: .\templates\pages\show.html:39
 #, fuzzy
 #| msgid "basic page"
 msgid "go back basic page"
@@ -33278,7 +33261,7 @@ msgstr "تراجع"
 
 #: .\templates\pages\index.html:17
 msgid "Our Latest Projects"
-msgstr "مسروعتنا الاخيره"
+msgstr "مشروعتنا الاخيره"
 
 #: .\templates\pages\index.html:34
 msgid ""
@@ -33325,7 +33308,7 @@ msgstr "افكار هادفه"
 
 #: .\templates\pages\index.html:122
 msgid "Creativity is a vital part of the projects we design for you"
-msgstr "البتكار هو الجز الاساسى"
+msgstr "لابتكار هو لاجزء الحيوى فى مشروعتنا"
 
 #: .\templates\pages\index.html:133
 msgid "Unique Approach"
@@ -33341,11 +33324,11 @@ msgstr "العملاء"
 
 #: .\templates\pages\index.html:162
 msgid "always be there for them"
-msgstr ""
+msgstr "ديما نعمل من اجل اسعاد عملائنا"
 
 #: .\templates\pages\index.html:163
 msgid "they trus us"
-msgstr ""
+msgstr "انهم يثقون فينا"
 
 #: .\templates\pages\index.html:173
 #, fuzzy
@@ -33416,33 +33399,33 @@ msgstr "انت بالفعل مسجل"
 msgid "register"
 msgstr "التسجيل"
 
-#: .\templates\pages\show.html:27
+#: .\templates\pages\show.html:63
 msgid "created_at"
 msgstr "انشا فى"
 
-#: .\templates\pages\show.html:31
+#: .\templates\pages\show.html:67
 msgid "engineer"
 msgstr "المهندس المسؤل"
 
-#: .\templates\pages\show.html:35
+#: .\templates\pages\show.html:71
 msgid "manager"
 msgstr "المدير التنفيزي"
 
-#: .\templates\pages\show.html:39
+#: .\templates\pages\show.html:75
 msgid "proid"
 msgstr "المده"
 
-#: .\templates\pages\show.html:43
+#: .\templates\pages\show.html:79
 msgid "place"
 msgstr "المكان"
 
-#: .\templates\pages\show.html:47
+#: .\templates\pages\show.html:83
 #, fuzzy
 #| msgid "cost "
 msgid "cost"
 msgstr "التكلفه"
 
-#: .\templates\pages\show.html:51
+#: .\templates\pages\show.html:87
 msgid "more datails"
 msgstr "لمعلومات  اكثر"
 
@@ -33487,10 +33470,8 @@ msgid "Subscribe"
 msgstr "اشترك"
 
 #: .\templates\parts\footer.html:56
-#, fuzzy
-#| msgid "All rights reserved"
-msgid ". All Rights Reserved. Design by"
-msgstr "جمميع حقوق الطبع محفوظه"
+msgid ". All Rights Reserved "
+msgstr "جميع الحقوق محفوظه"
 
 #: .\templates\parts\navbar.html:29
 msgid "basic page"
@@ -33526,7 +33507,7 @@ msgstr "مرحبا فى ا ر تى"
 
 #: .\templates\parts\navbar.html:73
 msgid "Top-Notch"
-msgstr "اعلى القيه"
+msgstr "توب نوتش"
 
 #: .\templates\parts\navbar.html:74
 msgid "Architecture"
@@ -33571,3 +33552,20 @@ msgstr "الملف الشخصى"
 #| msgid "basic page"
 msgid "back to the basic page"
 msgstr "الصفحه الاساسيه"
+
+#~ msgid "ARTY"
+#~ msgstr "ارتى"
+
+#, fuzzy
+#~| msgid "projects"
+#~ msgid "Projects Report"
+#~ msgstr "المشروعات"
+
+#~ msgid "Sales Weekly"
+#~ msgstr " المبيعات الاسبوعيه"
+
+#~ msgid "Sales Monthly"
+#~ msgstr "المبيعات الشهريه"
+
+#~ msgid "Sales Yearly"
+#~ msgstr "المبيعات السنويه"

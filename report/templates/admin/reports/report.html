@@ -4,7 +4,7 @@
 
 {% block content %}
 
-   <!-- <h1>{% trans 'Sales Weekly' %}</h1>
+   <h1>{% trans 'Sales Weekly' %}</h1>
     <div id="weekly-chart" style="width: calc(100% - 275px)" data-list="{{ weekly_stats }}"></div>
     
     <h1>{% trans 'Sales Monthly' %}</h1>
@@ -34,7 +34,7 @@
         const monthly_stats = JSON.parse(document.getElementById('monthly-chart').dataset.list)
         const monthly_chart = new ApexCharts(document.querySelector("#monthly-chart"), {
             chart: {
-                type: 'line',
+                type: 'bar',
                 height: 200
             },
             series: [{
@@ -42,7 +42,7 @@
                 data: monthly_stats.map(e => e.sum)
             }],
             xaxis: {
-                categories: monthly_stats.map(e => `${e.year}/${e.month}`)
+                categories: monthly_stats.map(e => `${e.year}/M${e.month}`)
             }
         });
         monthly_chart.render();
@@ -62,8 +62,10 @@
             }
         });
         yearly_chart.render();
-    </script>-->
-    {{ yearly_stats }}
+    </script>
+  
+{% endblock %}
+<!--  {{ yearly_stats }}
     <h1>{% trans 'Sales' %}</h1>
     <div id="chart" style="width: calc(100% - 275px)" data-list="{{ yearly_stats }}" ></div>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
@@ -81,10 +83,7 @@
             xaxis: {
                 categories: yearly_stats.map(e => e.year)
             }
-        });
-          
-          
+        });  
           
           chart.render();
-    </script>
-{% endblock %}
+    </script>-->

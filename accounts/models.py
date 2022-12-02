@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from PIL import Image
+from django.utils.translation import gettext as _
+
+
 
 
 class Profile(models.Model):
@@ -19,6 +22,11 @@ class Profile(models.Model):
             output_size = (300, 300)
             img.thumbnail(output_size)
             img.save(self.image.path)
+    class Meta:
+        verbose_name = _('Profile')
+        verbose_name_plural = _('Profiles')
+
+
 
 
 def create_profile(sender, **kwarg):

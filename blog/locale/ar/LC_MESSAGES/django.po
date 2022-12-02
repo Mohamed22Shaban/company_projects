@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-27 03:39+0200\n"
+"POT-Creation-Date: 2022-12-02 22:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,9 +36,9 @@ msgstr "المحتوى"
 msgid "who am i"
 msgstr "من انا"
 
-#: .\blog\templates\blog\about.html:5
+#: .\blog\templates\blog\about.html:5 .\blog\templates\blog\base.html:140
 msgid "Atry company for technology and architecture projects"
-msgstr "ا ت رى لمشروعات الانشاء والتقنيه"
+msgstr "ارتي للتكنولوجيا و المشروعات الهندسيه"
 
 #: .\blog\templates\blog\base.html:25
 #, fuzzy
@@ -99,10 +99,6 @@ msgstr "اخر تدوينه"
 msgid "last comments"
 msgstr "اخر تعليق"
 
-#: .\blog\templates\blog\base.html:140
-msgid "muhammed shaban learn how to improve my skills "
-msgstr "محمد شعبان احول التطوير من مهاراتى"
-
 #: .\blog\templates\blog\base.html:146
 msgid "important sites"
 msgstr "مواقع مهمه"
@@ -155,7 +151,7 @@ msgstr "اضافه تعليقات"
 #, fuzzy
 #| msgid "last comments"
 msgid "publish comments"
-msgstr "اخر تعليق"
+msgstr "نشر تعليق"
 
 #: .\blog\templates\blog\index.html:20
 msgid " no blogs if you have accounts before you can log in"

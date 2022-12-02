@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-27 03:39+0200\n"
+"POT-Creation-Date: 2022-12-02 22:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: .\accounts\templates\user\login.html:37
 #: .\accounts\templates\user\login.html:38
 msgid "username"
-msgstr "اسم المستخدم"
+msgstr "المستخدم"
 
 #: .\accounts\forms.py:9 .\accounts\forms.py:48
 msgid "email"
@@ -35,7 +35,7 @@ msgstr "الاسم الاول"
 
 #: .\accounts\forms.py:11 .\accounts\forms.py:47
 msgid "lastname"
-msgstr "الاسم الخير"
+msgstr "الاسم الاخير"
 
 #: .\accounts\forms.py:13 .\accounts\templates\user\login.html:41
 #: .\accounts\templates\user\login.html:42
@@ -50,11 +50,21 @@ msgstr "اعاده كلمه السر"
 msgid "passward"
 msgstr "كلمه السر"
 
+#: .\accounts\models.py:26
+msgid "Profile"
+msgstr "الملف الشخصى"
+
+#: .\accounts\models.py:27
+msgid "Profiles"
+msgstr "الملفات الشخصيه"
+
 #: .\accounts\templates\user\login.html:17
 #: .\accounts\templates\user\login.html:44
 #: .\accounts\templates\user\register.html:51
+#, fuzzy
+#| msgid "login again"
 msgid "login"
-msgstr "تسجيل الدخول"
+msgstr "الدخول مجددا"
 
 #: .\accounts\templates\user\login.html:20
 #: .\accounts\templates\user\profile.html:37
@@ -99,7 +109,7 @@ msgstr "الاسم"
 
 #: .\accounts\templates\user\profile.html:57
 msgid "gmail"
-msgstr "الايميل"
+msgstr "البريد"
 
 #: .\accounts\templates\user\profile.html:65
 msgid "count of blogs"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-27 03:39+0200\n"
+"POT-Creation-Date: 2022-12-02 22:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,22 +49,90 @@ msgstr "النوع"
 
 #: .\tasks\forms.py:75 .\tasks\forms.py:97
 msgid "email"
-msgstr "البريد الالكترونى"
+msgstr "بريد"
 
 #: .\tasks\forms.py:98
 msgid "phone"
-msgstr "التليفون"
+msgstr "تليفون"
 
 #: .\tasks\forms.py:99
 msgid "message"
 msgstr "الرساله"
 
-#: .\tasks\models.py:73
+#: .\tasks\models.py:16
+#, fuzzy
+#| msgid "category"
+msgid "Category"
+msgstr "النوع"
+
+#: .\tasks\models.py:17
+#, fuzzy
+#| msgid "category"
+msgid "Categories"
+msgstr "الانواع"
+
+#: .\tasks\models.py:24
+msgid "Pending"
+msgstr "تحت الانشاء"
+
+#: .\tasks\models.py:25
+msgid "Completed"
+msgstr "منتهيه"
+
+#: .\tasks\models.py:26
+msgid "constructing"
+msgstr "تحت الانشاء"
+
+#: .\tasks\models.py:30
+msgid "cash"
+msgstr "مدفوع"
+
+#: .\tasks\models.py:31
+msgid "credit"
+msgstr "اجل"
+
+#: .\tasks\models.py:46 .\tasks\models.py:47
+msgid "Sales"
+msgstr "المبيعات"
+
+#: .\tasks\models.py:60 .\tasks\models.py:61
+msgid "Clients"
+msgstr "العملاء"
+
+#: .\tasks\models.py:86
+#, fuzzy
+#| msgid "photo_project"
+msgid "Project"
+msgstr "صوره المشروع"
+
+#: .\tasks\models.py:87
+msgid "Projects"
+msgstr "المشروعات"
+
+#: .\tasks\models.py:105
 msgid "Order"
 msgstr "طلب"
 
-#: .\tasks\models.py:74
+#: .\tasks\models.py:106
 msgid "Orders"
 msgstr " الطلبات"
 
+#: .\tasks\models.py:123
+msgid "EmailSubscribe"
+msgstr "البريد المشترك"
 
+#: .\tasks\models.py:124
+msgid "EmailSubscribes"
+msgstr ""
+
+#: .\tasks\models.py:146
+msgid "EmailSender"
+msgstr "البريد المرسل"
+
+#: .\tasks\models.py:147
+msgid "EmailSenders"
+msgstr ""
+
+#: .\tasks\models.py:163 .\tasks\models.py:164
+msgid "RecievMessages"
+msgstr "مستلم رساله"
