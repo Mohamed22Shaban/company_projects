@@ -100,8 +100,6 @@ msgid "Clients"
 msgstr "العملاء"
 
 #: .\tasks\models.py:86
-#, fuzzy
-#| msgid "photo_project"
 msgid "Project"
 msgstr "صوره المشروع"
 
@@ -123,7 +121,7 @@ msgstr "البريد المشترك"
 
 #: .\tasks\models.py:124
 msgid "EmailSubscribes"
-msgstr ""
+msgstr "البريد المشترك"
 
 #: .\tasks\models.py:146
 msgid "EmailSender"
@@ -131,7 +129,7 @@ msgstr "البريد المرسل"
 
 #: .\tasks\models.py:147
 msgid "EmailSenders"
-msgstr ""
+msgstr "ارسال بريد"
 
 #: .\tasks\models.py:163 .\tasks\models.py:164
 msgid "RecievMessages"

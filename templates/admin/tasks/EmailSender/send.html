@@ -1,0 +1,12 @@
+{% extends 'admin/change_form.html' %}
+{% load i18n my_filters %}
+
+{% block content %}
+    <fieldset class="module aligned mb-0">
+        <div class="form-row">
+            <div>
+                <label>{% trans 'Customer' %}:</label>
+                <div class="readonly">{{ original }}</div>
+            </div>
+        </div>
+    </fieldset>

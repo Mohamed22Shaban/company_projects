@@ -1,6 +1,6 @@
 from django.contrib import admin
-from report.models import OrderReport
-from tasks.models import Project,Order
+from report.models import *
+from tasks.models import *
 from django.template.response import TemplateResponse
 from django.utils.translation import gettext_lazy as _
 
@@ -54,3 +54,4 @@ class OrderAdmin(admin.ModelAdmin):
         return TemplateResponse(
             request, self.change_list_template, context
         )
+

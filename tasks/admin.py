@@ -4,10 +4,9 @@ from django.contrib import admin
 
 from .models import *
 admin.site.register(Clients)
-# admin.site.register(Project)
-admin.site.register(EmailSender)
+# admin.site.register(EmailSender)
 admin.site.register(EmailSubscribe)
-admin.site.register(Project)
+# admin.site.register(Project)
 admin.site.register(Sales)
 admin.site.register(RecievMessages)
 admin.site.register(Order)
@@ -19,24 +18,27 @@ from . import models
 @admin.register(models.Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_per_page = 20
+    list_display = ['id','name','order']
+
+
+
+@admin.register(models.EmailSender)
+class EmailSenderAdmin(admin.ModelAdmin):
+    list_per_page = 20
+    list_display = ['id','title','content', 'date_added']
 
 
 
 
 
-# @admin.register(models.Project)
-# class ProjectAdmin(admin.ModelAdmin):
-#     list_per_page = 20
-#     list_select_related = ['sales']
-#     list_display = ['id', 'amount','created_at']
 
-#     def amount(self, obj):
-#         return obj.sales.amount
+@admin.register(models.Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_per_page = 20
+    list_select_related = ['category']
+    list_display = ['id','name','cost', 'amount','created_at']
 
-
-#     def items(self, obj):
-#         return len(obj.sales.created_at)
-
+  
 # @admin.register(models.Order)
 # class OrderAdmin(admin.ModelAdmin):
 #     list_display = ['id',  'amount', 'payment_method','created_at']

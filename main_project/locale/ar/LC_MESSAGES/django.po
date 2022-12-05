@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-02 22:56+0200\n"
+"POT-Creation-Date: 2022-12-05 16:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33204,6 +33204,10 @@ msgstr ""
 msgid "Zuojiang Zhuang"
 msgstr ""
 
+#: .\templates\admin\tasks\EmailSender\send.html:8
+msgid "Customer"
+msgstr "زبون"
+
 #: .\templates\base.html:38
 msgid " El Huda Company  "
 msgstr "شركه الهدى"
@@ -33420,8 +33424,6 @@ msgid "place"
 msgstr "المكان"
 
 #: .\templates\pages\show.html:83
-#, fuzzy
-#| msgid "cost "
 msgid "cost"
 msgstr "التكلفه"
 
@@ -33478,8 +33480,6 @@ msgid "basic page"
 msgstr "الصفحه الاساسيه"
 
 #: .\templates\parts\navbar.html:32 .\templates\parts\sidebar.html:6
-#, fuzzy
-#| msgid "blog"
 msgid "blog"
 msgstr "المدونه"
 
@@ -33488,8 +33488,6 @@ msgid "Contacts "
 msgstr "تواصل معنا"
 
 #: .\templates\parts\navbar.html:40 .\templates\parts\sidebar.html:44
-#, fuzzy
-#| msgid "Logout"
 msgid "logout"
 msgstr "تسجيل الخروج"
 
@@ -33518,6 +33516,10 @@ msgid ""
 "With 19+ years’ experience in combining traditions and innovations, Arty "
 "creates settings to inspire the way people live, learn, heal, work and play"
 msgstr "مع 19 سنه من الخبره والجمع بين العادات والابتكارات"
+
+#: .\templates\parts\navbar.html:85
+msgid "All Projects"
+msgstr "كل المشروعات"
 
 #: .\templates\parts\sidebar.html:15
 msgid "base"
@@ -33548,24 +33550,5 @@ msgid "Profile"
 msgstr "الملف الشخصى"
 
 #: .\templates\parts\sidebar.html:54
-#, fuzzy
-#| msgid "basic page"
 msgid "back to the basic page"
 msgstr "الصفحه الاساسيه"
-
-#~ msgid "ARTY"
-#~ msgstr "ارتى"
-
-#, fuzzy
-#~| msgid "projects"
-#~ msgid "Projects Report"
-#~ msgstr "المشروعات"
-
-#~ msgid "Sales Weekly"
-#~ msgstr " المبيعات الاسبوعيه"
-
-#~ msgid "Sales Monthly"
-#~ msgstr "المبيعات الشهريه"
-
-#~ msgid "Sales Yearly"
-#~ msgstr "المبيعات السنويه"
