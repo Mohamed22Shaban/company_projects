@@ -203,6 +203,6 @@ EMAIL_HOST_PASSWORD = 'kijqgemazngrxrbv'
 EMAIL_USE_TLS = True
 EMAIL_PORT = '587'
 
-
+#raheem2022#
 ## heroku settings
 django_heroku.settings(locals())
