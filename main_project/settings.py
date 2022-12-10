@@ -17,8 +17,8 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 ## path use in static
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 #   
 
 
