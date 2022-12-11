@@ -38,7 +38,7 @@ SECRET_KEY = '3Ef5D3C5C5Eb8Bf1D3181410Bb646806A26B51D1C2B604D7'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'project-django-show.herokuapp.com/','127.0.0.1'
+    'fathy20.herokuapp.com//','127.0.0.1'
     ]
 
 
@@ -108,10 +108,10 @@ WSGI_APPLICATION = 'main_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd8pr5n3187u3pb',
-        'HOST': 'ec2-44-195-132-31.compute-1.amazonaws.com',
-        'USER': 'mqbjyfjzqqropz',
-        'PASSWORD': '2b3008755b60ee2c5122d61e212a45410e47027278e5c7e30327e025f28cad08',
+        'NAME': 'd8b34cjiudmvib',
+        'HOST': 'ec2-3-219-229-143.compute-1.amazonaws.com',
+        'USER': 'pnffahgqlpnayn',
+        'PASSWORD': '58bcaf83d0bbf51bb2bb4d310840ef446d201d712cca260b78c440e4744ad02d',
         'PORT': '5432',
     }
 }
