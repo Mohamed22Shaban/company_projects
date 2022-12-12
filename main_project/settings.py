@@ -104,6 +104,20 @@ WSGI_APPLICATION = 'main_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 #### waleed   ### mu2020
+# ALLOWED_HOSTS = [
+#     'fathy20.herokuapp.com//','127.0.0.1'
+#     ]
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'd8b34cjiudmvib',
+#         'HOST': 'ec2-3-219-229-143.compute-1.amazonaws.com',
+#         'USER': 'pnffahgqlpnayn',
+#         'PASSWORD': '58bcaf83d0bbf51bb2bb4d310840ef446d201d712cca260b78c440e4744ad02d',
+#         'PORT': '5432',
+#     }
+}
 
 DATABASES = {
     'default': {
