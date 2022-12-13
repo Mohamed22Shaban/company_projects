@@ -19,8 +19,7 @@ import os
 ## path use in static
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # BASE_DIR = Path(__file__).resolve().parent.parent
-#   git push heroku main
-DISABLE_COLLECTSTATIC = True
+#   
 
 
 ## language settings
@@ -104,20 +103,6 @@ WSGI_APPLICATION = 'main_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 #### waleed   ### mu2020
-# ALLOWED_HOSTS = [
-#     'fathy20.herokuapp.com//','127.0.0.1'
-#     ]
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'd8b34cjiudmvib',
-#         'HOST': 'ec2-3-219-229-143.compute-1.amazonaws.com',
-#         'USER': 'pnffahgqlpnayn',
-#         'PASSWORD': '58bcaf83d0bbf51bb2bb4d310840ef446d201d712cca260b78c440e4744ad02d',
-#         'PORT': '5432',
-#     }
-}
 
 DATABASES = {
     'default': {
@@ -218,6 +203,19 @@ EMAIL_HOST_PASSWORD = 'kijqgemazngrxrbv'
 EMAIL_USE_TLS = True
 EMAIL_PORT = '587'
 
-#raheem2022#
+#raheem2022
 ## heroku settings
 django_heroku.settings(locals())
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'd8pdphch1hq0jq',
+#         'HOST': 'ec2-3-225-213-67.compute-1.amazonaws.com',
+#         'USER': 'ibltvfewrqcuom',
+#         'PASSWORD': '645b029721c77e223a42932947c2e0233f75d5267fc9e921aa045b32fae38d70',
+#         'PORT': '5432',
+#     }
+# }
