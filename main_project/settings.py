@@ -104,6 +104,7 @@ WSGI_APPLICATION = 'main_project.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 #### waleed   ### mu2020
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -112,12 +113,12 @@ DATABASES = {
         'USER': 'ibltvfewrqcuom',
         'PASSWORD': '645b029721c77e223a42932947c2e0233f75d5267fc9e921aa045b32fae38d70',
         'PORT': '5432',
-    }
+    },
 }
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'NAME':'db.sqlite3',
 #     }
 # }
 
@@ -199,7 +200,7 @@ LOGOUT_REDIRECT_URL = '/accounts/login'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'mohamedtelb200@gmail.com'
-EMAIL_HOST_PASSWORD = 'kijqgemazngrxrbv'
+EMAIL_HOST_PASSWORD = 'ribjwzbcdznazduc'
 EMAIL_USE_TLS = True
 EMAIL_PORT = '587'
 
@@ -218,5 +219,5 @@ django_heroku.settings(locals())
 #         'USER': 'ibltvfewrqcuom',
 #         'PASSWORD': '645b029721c77e223a42932947c2e0233f75d5267fc9e921aa045b32fae38d70',
 #         'PORT': '5432',
-#     }
+#     },
 # }
