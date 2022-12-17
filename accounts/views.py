@@ -13,8 +13,12 @@ from django.views.generic import CreateView
 from django.urls import reverse_lazy
 
 
+
+
 class RegisterView(CreateView):
     form_class = UserCreationForm
+    if form_class.is_valid():
+        form_class.save()
     # success_url = reverse_lazy('login')
     template_name = 'user/register.html'
 
